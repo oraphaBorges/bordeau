@@ -2,14 +2,17 @@ package br.com.bordeau.model;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
 public class Podcast {
-	@Id
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@ManyToOne
 	private Usuario criador;
@@ -17,6 +20,7 @@ public class Podcast {
 	private List<Usuario> inscritos;
 	@OneToMany
 	private List<Playlist> playlists;
+	@Column(length=140)
 	private String descricao;
 	private String capa;
 	private String nome;

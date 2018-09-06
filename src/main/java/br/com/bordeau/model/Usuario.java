@@ -2,13 +2,15 @@ package br.com.bordeau.model;
 
 import java.sql.Date;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import br.com.bordeau.model.enums.TipoUsuario;
 
 @Entity
 public class Usuario {
-	@Id
+	@Id  @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nome;
 	private String email;

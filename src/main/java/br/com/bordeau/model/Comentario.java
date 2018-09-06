@@ -3,23 +3,25 @@ package br.com.bordeau.model;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
 public class Comentario {
-	@Id
-	private int id;
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 	@ManyToOne
 	private Usuario autor;
 	private List<Comentario> respostas;
 	
 	//Getters e Setters
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 	
