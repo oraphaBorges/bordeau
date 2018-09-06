@@ -13,6 +13,9 @@ public class Endereco {
 	private Long id;
 	private String descricao;
 	
+	public Endereco(String string) {
+	 this.descricao = string;
+	}
 	//Getters e Setters
 	public String getDescricao() {
 		return descricao;
