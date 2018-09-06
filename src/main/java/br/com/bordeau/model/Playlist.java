@@ -41,12 +41,6 @@ public class Playlist {
 	public void setCapa(String capa) {
 		this.capa = capa;
 	}
-	public List<Categoria> getCategorias() {
-		return categorias;
-	}
-	public void setCategorias(List<Categoria> categorias) {
-		this.categorias = categorias;
-	}
 	public List<Episodio> getEpisodios() {
 		return episodios;
 	}
