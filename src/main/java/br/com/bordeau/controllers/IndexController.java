@@ -11,7 +11,7 @@ public class IndexController {
 	
 	@RequestMapping(method=RequestMethod.GET)
 	public ModelAndView mostrar(){
-		return new 	ModelAndView("index");
+		return new ModelAndView("index");
 	}
 
 }

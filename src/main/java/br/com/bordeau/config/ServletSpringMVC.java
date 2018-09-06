@@ -1,9 +1,5 @@
 package br.com.bordeau.config;
 
-import javax.servlet.Filter;
-
-import org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter;
-import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class ServletSpringMVC extends AbstractAnnotationConfigDispatcherServletInitializer{
@@ -23,11 +19,11 @@ public class ServletSpringMVC extends AbstractAnnotationConfigDispatcherServletI
 		return new String [] {"/"};
 	}
 	
-	@Override
-	protected Filter[] getServletFilters() {
-		CharacterEncodingFilter encodingFilter = new CharacterEncodingFilter();
-		encodingFilter.setEncoding("UTF-8");
-		return new Filter[] {encodingFilter, new OpenEntityManagerInViewFilter()};
-	}
+//	@Override
+//	protected Filter[] getServletFilters() {
+//		CharacterEncodingFilter encodingFilter = new CharacterEncodingFilter();
+//		encodingFilter.setEncoding("UTF-8");
+//		return new Filter[] {encodingFilter, new OpenEntityManagerInViewFilter()};
+//	}
 
 }
