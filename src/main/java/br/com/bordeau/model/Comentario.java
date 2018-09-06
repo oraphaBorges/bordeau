@@ -1,14 +1,18 @@
 package br.com.bordeau.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Comentario {
 	@Id
 	private int id;
+	@ManyToOne
 	private Usuario autor;
-	private Comentario respostas;
+	private List<Comentario> respostas;
 	
 	//Getters e Setters
 	public void setId(int id) {
@@ -27,11 +31,11 @@ public class Comentario {
 		return autor;
 	}
 	
-	public void setComentario(Comentario resposta) {
-		this.respostas = resposta;
+	public void setComentario(List<Comentario> respostas) {
+		this.respostas = respostas;
 	}
 	
-	public Comentario getRepostas() {
+	public List<Comentario> getRepostas() {
 		return respostas;
 	}
 }
