@@ -1,5 +1,7 @@
+import org.junit.Before;
+import org.junit.jupiter.api.Test;
 
-import org.junit.*;
+import br.com.bordeau.model.Usuario;
 
 public class PodcastControllerTest{
 
