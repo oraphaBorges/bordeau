@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import br.com.bordeau.model.Podcast;
 import br.com.bordeau.model.Usuario;
+import br.com.bordeau.model.enums.TipoUsuario;
 import br.com.bordeau.util.TestInstances;
 
 public class PodcastControllerTest {
@@ -16,8 +17,8 @@ public class PodcastControllerTest {
 
 	@Before
 	public void instanciarAtributos() {
-		this.ouvinte = TestInstances.usuarioTeste();
-		this.criador = new Usuario();
+		this.ouvinte = TestInstances.usuarioTeste(TipoUsuario.OUVINTE);
+		this.criador = TestInstances.usuarioTeste(TipoUsuario.CRIADOR_DE_CONTEUDO);
 		this.podcastTeste = new Podcast();
 	}
 
