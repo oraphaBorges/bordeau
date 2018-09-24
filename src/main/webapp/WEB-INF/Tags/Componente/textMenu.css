@@ -1,0 +1,17 @@
+@charset "ISO-8859-1";
+.logo{
+	color: red;
+	font-size: 30px;
+	letter-spacing: 3px;
+}
+
+.logo:Hover{
+	color: #007390;
+	text-decoration: none;
+}
+
+.linksMenu{
+	color: white;
+	font-size: 18px;
+	word-spacing: 5px;
+}
