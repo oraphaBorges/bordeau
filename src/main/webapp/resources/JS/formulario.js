@@ -6,3 +6,10 @@ function contaDescricao(){
 	var titulo = document.getElementById('descricao').value;
 	document.getElementById('contador-desc').innerHTML = 240 - titulo.length + " caracteres restantes";
 };
+
+  var quill = new Quill('#editor', {
+    theme: 'snow',
+      modules: {
+      toolbar: '#toolbar'
+    }
+  });
