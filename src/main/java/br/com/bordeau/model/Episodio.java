@@ -15,7 +15,7 @@ public class Episodio {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String titulo;
-	private String audio;
+	private String audioPath;
 	@Column(length=140)
 	private String descricao;
 	private String capa;
@@ -41,10 +41,10 @@ public class Episodio {
 		this.titulo = titulo;
 	}
 	public String getAudio() {
-		return audio;
+		return audioPath;
 	}
-	public void setAudio(String audio) {
-		this.audio = audio;
+	public void setAudio(String path) {
+		this.audioPath = path;
 	}
 	public String getDescricao() {
 		return descricao;

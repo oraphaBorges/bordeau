@@ -22,7 +22,7 @@ public class Podcast {
 	private List<Playlist> playlists;
 	@Column(length=140)
 	private String descricao;
-	private String capa;
+	private String capaPath;
 	private String nome;
 	@OneToMany
 	private List<Categoria> categorias;
@@ -60,12 +60,12 @@ public class Podcast {
 		return descricao;
 	}
 	
-	public void setCapa(String capa) {
-		this.capa = capa;
+	public void setCapa(String path) {
+		this.capaPath = path;
 	}
 	
 	public String getCapa() {
-		return capa;
+		return capaPath;
 	}
 	
 	public void setNome(String nome) {
