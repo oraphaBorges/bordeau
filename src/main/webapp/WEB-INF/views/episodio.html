@@ -3,30 +3,30 @@
 <head>
 	<meta charset="utf-8">
     <link href="../../resources/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../../resources/css/episodio.css">
 </head>
 <body>
-	<div class="container">
+	<div class="container" style="margin-top: 20px">
 		<div class="row" style="height: 200px">
 			<div class="col-sm-12" id="episodio-capa">
 				<img id="capa" src="https://image.freepik.com/vrije-vector/gekleurde-achtergrond-van-abstracte-geluidsgolf_23-2147622442.jpg" class="img-fluid">
 			</div>
 		</div>
-		<div class="row" style="padding-top: 20px">
-			<div class="col-2" id="imagem-criador"> 
-				<img id="criador" src="https://www.greenme.com.br/images/viver/saude-bem-estar/insatisfeito.jpg" class="rounded-circle img-fluid" style="height: 150px; width: 150px">
-			</div>
-			<div class="col-10">
-				<div class="row" >
-					<label id="titulo" class="col-form-label font-weight-bold" style="color: #800000">
-						Algum título para o podcast com até 50 caracteress
-					</label>
+		<div class="row" style="margin-top: 20px">
+			<div class="row" style="padding: 0px 20px 0px 20px">
+				<div class="col-2" id="imagem-criador"> 
+					<img id="criador" class="rounded-circle" src="https://www.greenme.com.br/images/viver/saude-bem-estar/insatisfeito.jpg">
 				</div>
-				<div class="row" style="color: #800000">
-					<div class="col-sm-4">
-						<label id="nome-criador">Aqui vai o nome do criador de conteúdo</label>
-					</div>
-					<div class="col text-muted">
+				<div class="col-10" style="padding-left: 40px">
+					<div class="row" >
+						<label id="titulo" class="font-weight-bold">
+							Como se estressar com front-end
+						</label>
 						<label id="data-postagem">01 de outubro de 2018</label>
+					</div>
+					<p id="descricao">"Tem dias de muita chuva, dias de roupa no chão, dias de movimeto, dias de sim e de não. Você inventa dias de tormenta. Prefiro dias de algodão." Adaptado</p>
+					<div class="row">
+						<a id="nome-criador" class="font-weight-bold" href="https://twitter.com/_pequenospoemas">Pequenos Poemas</a>
 					</div>
 				</div>
 			</div>
@@ -34,11 +34,11 @@
 	</div>
 
 	<script src="../../resources/JS/jquery.min.js"></script>
-    <script src="../../resources/JS/bootstrap/bootstrap.min.js"></script>
-    <script src="../../resources/JS/imagesloaded.pkgd.min.js"></script>
-    <script src="../../resources/JS/jquery-imagefill.js"></script>
-    <script type="text/javascript">
-    	$('#episodio-capa').imagefill();
-    </script>
+	<script src="../../resources/JS/bootstrap/bootstrap.min.js"></script>
+	<script src="../../resources/JS/imagesloaded.pkgd.min.js"></script>
+	<script src="../../resources/JS/jquery-imagefill.js"></script>
+	<script type="text/javascript">
+		$('#episodio-capa').imagefill();
+	</script>
 
 </body>
