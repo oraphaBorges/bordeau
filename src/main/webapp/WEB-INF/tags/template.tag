@@ -5,6 +5,7 @@
 
 <head>
 	<c:url value="/resources" var="resourcePath" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="${resourcePath}/css/bootstrap/bootstrap.min.css">
 	<link rel="stylesheet" href="${resourcePath}/css/textMenu.css">
 	

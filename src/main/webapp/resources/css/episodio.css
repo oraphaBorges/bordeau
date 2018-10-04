@@ -1,0 +1,29 @@
+#criador{
+	width: 150px;
+	height: 150px;
+}
+
+#titulo{
+	color: #800000;
+	font-family: cursive;
+	font-size: 25px;
+}
+
+#descricao{
+	margin-top: 10px;
+	color: #712F26;
+	font-family: cursive;
+	font-size: 18px;
+}
+
+#nome-criador{
+	color: #202020;
+}
+
+#data-postagem{
+	width: 100%;
+	margin-top: -15px;
+	box-sizing: border-box;
+	outline: none;
+	font-size: 12px;
+}
