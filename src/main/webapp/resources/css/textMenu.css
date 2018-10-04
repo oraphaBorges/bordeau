@@ -1,4 +1,4 @@
-@charset "ISO-8859-1";
+@charset "UTF-8";
 .logo{
 	color: red;
 	font-size: 30px;
@@ -16,7 +16,6 @@
 	word-spacing: 5px;
 }
 .rodape {
-  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -27,7 +26,6 @@
   text-align: center;
 }
 .social {
-	position: fixed;
 	left: 0;
 	right: 0;
 	bottom: 3%;
