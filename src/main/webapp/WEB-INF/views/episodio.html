@@ -29,6 +29,15 @@
 					<div class="row">
 						<a id="nome-criador" class="font-weight-bold" href="https://twitter.com/_pequenospoemas">Pequenos Poemas</a>
 					</div>
+                    <!-- Player audio -->
+                    <div id="waveform"></div>
+
+                    <div style="text-align: center">
+                      <button class="btn btn-primary" onclick="wavesurfer.playPause()">
+                        Play
+                      </button>
+                    </div>
+                    <!-- Player audio -->
 				</div>
 			</div>
 		</div>
@@ -38,11 +47,10 @@
 	<script src="../../resources/JS/bootstrap/bootstrap.min.js"></script>
 	<script src="../../resources/JS/imagesloaded.pkgd.min.js"></script>
 	<script src="../../resources/JS/jquery-imagefill.js"></script>
-	
 	<script type="text/javascript">
 		$('#episodio-capa').imagefill();
 	</script>
-	
+		
 	<script type="text/javascript">
 		$(document).ready(		
 			function toast(){
@@ -54,4 +62,7 @@
     		}
     	);
     </script>
+    <script src="../../resources/JS/player.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.2.3/wavesurfer.min.js"></script>
+
 </body>
