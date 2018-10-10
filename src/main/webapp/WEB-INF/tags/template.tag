@@ -14,7 +14,7 @@
 <html>
 <body>
 <%@include file="components/header.jsp"%>
-<div class="container">
+<div>
 	<jsp:doBody />
 </div>
 <%@include file="components/footer.jsp"%>
