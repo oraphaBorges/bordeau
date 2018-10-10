@@ -1,7 +1,5 @@
 package br.com.bordeau.controllers;
 
-import javax.servlet.annotation.MultipartConfig;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,7 +13,7 @@ import br.com.bordeau.model.Podcast;
 
 @Controller
 @RequestMapping("/podcast")
-public class PodcastController {
+public class PodcastController implements pagina {
 	
 	private FileSaver fileSaver;
 //	@Autowired
