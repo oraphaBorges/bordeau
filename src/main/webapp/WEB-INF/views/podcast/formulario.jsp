@@ -100,15 +100,15 @@
                 <button class="ql-image"></button>
                 </span>
                 </div>
+                <input type="text" name="c" id="c" hidden>
                 <div id="editor" class="editor"></div>
                 </div>
             </div>
         </div>
-
 	<div class="form-group row">
             <div class="col">
-                    <button class="btn font-weight-bold"
-							style="background-color: #800000; color: #ffffff" type="submit">Concluir</button>
+                    <button class="btn font-weight-bold" onclick="submit(this)"
+							style="background-color: #800000; color: #ffffff" type="button">Concluir</button>
               </div>
 				</div>
       </form>
@@ -116,5 +116,11 @@
     </div>
     <script src="${resourcePath}/JS/quill/quill.min.js"></script>
 	<script type="text/javascript" src="${resourcePath}/JS/formulario.js"></script>
+	<script>
+		function submit(btn){
+			document.getElementById('c').value = JSON.stringify(quill.getContents());
+			btn.form.submit();
+		}
+	</script>
 	</jsp:body>
 </tag:template>

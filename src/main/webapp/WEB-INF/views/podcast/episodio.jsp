@@ -7,6 +7,7 @@
 <title>Formulário</title>
 <c:url value="/resources" var="resourcePath" />
 <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+<link href="${resourcePath}/css/episodio.css" rel="stylesheet">
 </head>
 <tag:template>
 	<jsp:body>
@@ -39,15 +40,20 @@
                     </div>
                     <!-- Player audio -->
 				</div>
+				<div class="col-12">
+					<input type="text" name="c" id="c" hidden>
+					<div id="editor" class="editor"></div>
+				</div>
 			</div>
 			</div>
 		</div>
 		</div>
 
-	<script src="../../resources/JS/jquery.min.js"></script>
-	<script src="../../resources/JS/bootstrap/bootstrap.min.js"></script>
-	<script src="../../resources/JS/imagesloaded.pkgd.min.js"></script>
-	<script src="../../resources/JS/jquery-imagefill.js"></script>
+	<script src="${resourcePath}/JS/jquery.min.js"></script>
+	<script src="${resourcePath}/JS/bootstrap/bootstrap.min.js"></script>
+	<script src="${resourcePath}/JS/imagesloaded.pkgd.min.js"></script>
+	<script src="${resourcePath}/JS/jquery-imagefill.js"></script>
+	<script src="${resourcePath}/JS/quill/quill.min.js"></script>
 	<script type="text/javascript">
 		$('#episodio-capa').imagefill();
 	</script>
@@ -62,6 +68,12 @@
 				setTimeout(function(){ document.getElementById('sucesso').innerHTML = ''}, 3000);
     		}
     	);
+		var quill = new Quill('#editor', {
+			theme: 'bubble',
+			readOnly : true,
+			modules: {}
+		});
+		quill.setContents(JSON.parse($('#c').val()));
     </script>
     <!-- player audio -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.2.3/wavesurfer.min.js"></script>
