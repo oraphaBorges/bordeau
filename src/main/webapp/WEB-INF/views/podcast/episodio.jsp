@@ -7,6 +7,7 @@
 <title>Formulário</title>
 <c:url value="/resources" var="resourcePath" />
 <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+<link href="${resourcePath}/css/episodio.css" rel="stylesheet">
 </head>
 <tag:template>
 	<jsp:body>
