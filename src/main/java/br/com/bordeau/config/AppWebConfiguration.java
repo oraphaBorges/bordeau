@@ -16,10 +16,12 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
+import br.com.bordeau.DAOS.EpisodioDao;
+import br.com.bordeau.DAOS.PodcastDao;
 import br.com.bordeau.controllers.IndexController;
 
 @EnableWebMvc
-@ComponentScan(basePackageClasses = { IndexController.class })
+@ComponentScan(basePackageClasses = { IndexController.class, EpisodioDao.class, PodcastDao.class })
 public class AppWebConfiguration implements WebMvcConfigurer{
 
 	@Bean

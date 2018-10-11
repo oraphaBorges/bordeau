@@ -23,7 +23,7 @@ public class JPAConfiguration {
 			= new LocalContainerEntityManagerFactoryBean();
 		
 		// Local onde estão os models para serem criados as tabelas
-		factoryBean.setPackagesToScan("br.com.bordeau.models");
+		factoryBean.setPackagesToScan("br.com.bordeau.model");
 		
 		// Seta a framework que cuidará das transações do banco de dado
 		JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
@@ -33,26 +33,6 @@ public class JPAConfiguration {
 		factoryBean.setJpaProperties(additionalProperties);
 		return factoryBean;
 	}
-	
-	//POSTGRES CONFIG
-//	@Bean
-//	public Properties additionalProperties() {
-//		Properties props = new Properties();
-//		props.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
-//		props.setProperty("hibernate.show_sql", "true");
-//		props.setProperty("hibernate.hbm2ddl.auto", "update");
-//		return props;
-//	}
-//	
-//	@Bean
-//	public DriverManagerDataSource dataSurce() {
-//		DriverManagerDataSource dataSource =  new DriverManagerDataSource();
-//		dataSource.setUsername("postgres");
-//		dataSource.setPassword("");
-//		dataSource.setUrl("jdbc:postgresql://localhost:5432/bordeau");
-//		dataSource.setDriverClassName("org.postgresql.Driver");
-//		return dataSource;
-//	}
 	
 	// MYSQL CONFIG
 	@Bean
@@ -68,7 +48,7 @@ public class JPAConfiguration {
 	public DriverManagerDataSource dataSurce() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setUsername("root");
-		dataSource.setPassword("admin");
+		dataSource.setPassword("");
 		dataSource.setUrl("jdbc:mysql://localhost:3306/bordaeu?autoReconnect=true&useSSL=false");
 		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
 		return dataSource;
