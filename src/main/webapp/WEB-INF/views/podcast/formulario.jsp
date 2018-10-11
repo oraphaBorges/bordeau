@@ -13,7 +13,7 @@
 <div class="container" style="padding-top: 50px;">
 	<h1 class="text-center" style="padding-bottom: 10px;">Cadastro Episódio Podcast</h1>
 	<div class="mx-auto">
-      <form method="post" action="/bordeau/podcast/submit" enctype="multipart/form-data">
+      <form method="post" action="/bordeau/podcast/submit">
 		<div class="form-group row">
 			<label for="titulo" class="col-sm-1 col-form-label font-weight-bold"
 						style="color: #800000">Tí­tulo:</label>
