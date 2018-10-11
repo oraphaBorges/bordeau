@@ -21,7 +21,7 @@ import br.com.bordeau.DAOS.PodcastDao;
 import br.com.bordeau.controllers.IndexController;
 
 @EnableWebMvc
-@ComponentScan(basePackageClasses = { IndexController.class, EpisodioDao.class, PodcastDao.class })
+@ComponentScan(basePackageClasses = { IndexController.class })
 public class AppWebConfiguration implements WebMvcConfigurer{
 
 	@Bean
