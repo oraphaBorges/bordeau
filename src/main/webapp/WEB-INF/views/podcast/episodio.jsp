@@ -10,12 +10,13 @@
 </head>
 <tag:template>
 	<jsp:body>
+		<div style="min-height:100%;">
 		<div id="sucesso" class="col-12"></div>
 		<div class="col-sm-12" id="episodio-capa" style="weight:100%;height: 200px">
 			<img id="capa" src="https://image.freepik.com/vrije-vector/gekleurde-achtergrond-van-abstracte-geluidsgolf_23-2147622442.jpg">
 		</div>
-		<div class="container">
-		<div class="row">
+		<div class="container" style="padding-top:70px; padding-bottom: 70px;">
+		<div class="row ">
 			<div class="row">
 				<div class="col-lg-2 col-md-3 col-sm-3">
 					<img id="img-criador" class="rounded-circle" height="140" width="140" src="https://www.greenme.com.br/images/viver/saude-bem-estar/insatisfeito.jpg">
@@ -33,13 +34,14 @@
                     <div id="waveform"></div>
 
                     <div style="text-align: center">
-                      <button class="btn btn-primary" onclick="wavesurfer.play()">Play</button>
-                      <button class="btn btn-primary" onclick="wavesurfer.pause()">Pause</button>
+                      <button class="btn btn-danger" onclick="wavesurfer.play()">Play</button>
+                      <button class="btn btn-danger" onclick="wavesurfer.pause()">Pause</button>
                     </div>
                     <!-- Player audio -->
 				</div>
 			</div>
 			</div>
+		</div>
 		</div>
 
 	<script src="../../resources/JS/jquery.min.js"></script>

@@ -34,26 +34,6 @@ public class JPAConfiguration {
 		return factoryBean;
 	}
 	
-	//POSTGRES CONFIG
-//	@Bean
-//	public Properties additionalProperties() {
-//		Properties props = new Properties();
-//		props.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
-//		props.setProperty("hibernate.show_sql", "true");
-//		props.setProperty("hibernate.hbm2ddl.auto", "update");
-//		return props;
-//	}
-//	
-//	@Bean
-//	public DriverManagerDataSource dataSurce() {
-//		DriverManagerDataSource dataSource =  new DriverManagerDataSource();
-//		dataSource.setUsername("postgres");
-//		dataSource.setPassword("");
-//		dataSource.setUrl("jdbc:postgresql://localhost:5432/bordeau");
-//		dataSource.setDriverClassName("org.postgresql.Driver");
-//		return dataSource;
-//	}
-	
 	// MYSQL CONFIG
 	@Bean
 	public Properties additionalProperties() {

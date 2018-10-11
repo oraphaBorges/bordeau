@@ -1,6 +1,5 @@
 @charset "UTF-8";
 .logo{
-	color: red;
 	font-size: 30px;
 	letter-spacing: 3px;
 }
@@ -20,7 +19,7 @@
   bottom: 0;
   width: 100%;
   padding: 0.5%;
-  background-color: #550A21;
+  background-color: rgb(128, 0, 0,0.8);
   font-size: 15px;
   color: #FFFFFF;
   text-align: center;
@@ -29,7 +28,7 @@
 	left: 0;
 	right: 0;
 	bottom: 3%;
-  background-color: #773B4D;
+  background-color: rgb(128, 0, 0,0.6);
   color: #FFFFFF;
   text-align: center;
 }
@@ -41,29 +40,22 @@
   text-decoration: none;
   border-radius: 50%;
 }
-.fa:hover {
-  opacity: 0.7;
-}
+
 
 .fa-facebook {
-  background: #773B4D;
   color: #FFFFFF;
 }
 
 .fa-twitter {
-  background: #773B4D;
   color: #FFFFFF;
 }
 
 .fa-instagram {
-  background: #773B4D;
   color: #FFFFFF;
-
+}
 .fa-google-plus {
-  background: #773B4D;
   color: #FFFFFF;
 }
 .fa-whatsapp {
-  background: #773B4D;
   color: #FFFFFF;
 }

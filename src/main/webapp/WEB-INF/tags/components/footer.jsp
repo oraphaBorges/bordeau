@@ -8,7 +8,7 @@
 	</div>
 	<!-- Copyright -->
 	<div class="rodape">
-		<font face='cursive'> &copy 2018 Copyright: Bordeau</font>
+		<font class="small"> &copy 2018 Copyright: Bordeau</font>
 	</div>
 </footer>
 

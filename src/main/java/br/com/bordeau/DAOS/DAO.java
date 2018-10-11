@@ -3,7 +3,7 @@ package br.com.bordeau.DAOS;
 import java.util.List;
 
 public interface DAO {
-	void gravar();
+	void gravar(Object object);
 	Object findById(Integer id);
 	List<?> listar(); 
 	void update(Object object);

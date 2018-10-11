@@ -18,30 +18,33 @@ public class PodcastDao implements DAO{
 	private EntityManager manager; 
 
 	public Podcast findById(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		return manager.createQuery("SELECT distinct(p) FROM Podcast p "
+				+ "WHERE p.id = :id",Podcast.class)
+			.setParameter("id",id)
+			.getSingleResult();
 	}
 
 	@Override
-	public void gravar() {
-		// TODO Auto-generated method stub
-		
+	public void gravar(Object object) {
+		Podcast podcast = (Podcast) object;
+		manager.persist(podcast);
 	}
 
 	@Override
 	public List<Podcast> listar() {
-		// TODO Auto-generated method stub
-		return null;
+		return manager.createQuery("SELECT p FROM Podcast p",Podcast.class).getResultList();
 	}
 
 	@Override
 	public void update(Object object) {
 		Podcast podcast = (Podcast) object;
+		manager.merge(podcast);
 	}
 
 	@Override
 	public void remove(Object object) {
-		Podcast podcast = (Podcast) object;		
+		Podcast podcast = (Podcast) object;
+		manager.remove(podcast);
 	}
 
 
