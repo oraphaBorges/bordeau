@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.bordeau.DAOS.PodcastDao;
@@ -12,10 +13,9 @@ import br.com.bordeau.model.Podcast;
 
 @Controller
 @RequestMapping("/podcast")
-public class PodcastController {//implements pagina {
+public class PodcastController implements pagina {
 	
 	private FileSaver fileSaver;
-	
 //	@Autowired
 	private PodcastDao dao;
 
@@ -38,13 +38,17 @@ public class PodcastController {//implements pagina {
 	// envio do formulario do podcast para o banco
 //	@MultipartConfig(maxFileSize=1L)
 	@RequestMapping(value = "/submit" ,method=RequestMethod.POST)
-	public ModelAndView enviarFormulari(Podcast podcast) {
-		try {
-		dao.gravar(podcast);
-		}catch(Exception e) {
-			System.out.println("Não deu!");
-		}
-		return new ModelAndView("redirect:/");
+	public ModelAndView enviarFormulario(MultipartFile file) {//, @Valid Podcast podcast, BindingResult results,
+			//RedirectAttributes redirectAttributes) {
+
+//		if (results.hasErrors()) {
+//			return form(podcast);
+//		}
+		Long idPodcast = 335L;
+		String path = fileSaver.write("episodios/"+idPodcast, file);
+		System.out.println(path);
+		// Aqui vai pra página do episódio criado
+		return new ModelAndView("/redirect:home");
 	}
 	
 	

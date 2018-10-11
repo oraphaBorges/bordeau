@@ -11,4 +11,3 @@
 		<font class="small"> &copy 2018 Copyright: Bordeau</font>
 	</div>
 </footer>
-
