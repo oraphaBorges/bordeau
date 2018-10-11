@@ -41,7 +41,7 @@
                     <!-- Player audio -->
 				</div>
 				<div class="col-12">
-					<input type="text" name="c" id="c" hidden>
+					<input type="text" name="c" id="c" value="${episodio.htmlComplementar}" hidden>
 					<div id="editor" class="editor"></div>
 				</div>
 			</div>
