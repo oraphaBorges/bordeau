@@ -1,4 +1,4 @@
-package br.com.bordeau.model;
+package br.com.bordeau.trash;
 
 import java.util.List;
 
@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+
+import br.com.bordeau.model.Episodio;
 
 @Entity
 public class Playlist {

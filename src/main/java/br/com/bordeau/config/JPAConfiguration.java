@@ -48,7 +48,7 @@ public class JPAConfiguration {
 	public DriverManagerDataSource dataSurce() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setUsername("root");
-		dataSource.setPassword("");
+		dataSource.setPassword("admin");
 		dataSource.setUrl("jdbc:mysql://localhost:3306/bordaeu?autoReconnect=true&useSSL=false");
 		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
 		return dataSource;

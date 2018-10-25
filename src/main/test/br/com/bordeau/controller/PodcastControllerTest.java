@@ -3,9 +3,9 @@ package br.com.bordeau.controller;
 import org.junit.Before;
 import org.junit.jupiter.api.Test;
 
-import br.com.bordeau.model.Podcast;
-import br.com.bordeau.model.Usuario;
 import br.com.bordeau.model.enums.TipoUsuario;
+import br.com.bordeau.trash.Podcast;
+import br.com.bordeau.trash.Usuario;
 import br.com.bordeau.util.TestInstances;
 
 public class PodcastControllerTest {

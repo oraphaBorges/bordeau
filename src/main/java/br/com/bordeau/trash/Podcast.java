@@ -1,4 +1,4 @@
-package br.com.bordeau.model;
+package br.com.bordeau.trash;
 
 import java.util.List;
 

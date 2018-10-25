@@ -1,10 +1,10 @@
 <footer>
 	<div class="social">
-		<a href="#" class="fa fa-facebook"></a> 
-		<a href="#"	class="fa fa-twitter"></a>
-		<a href="#" class="fa fa-instagram"></a>
-		<a href="#" class="fa fa-google-plus"></a>
-		<a href="#" class="fa fa-whatsapp"></a>
+		<a href="#" class="container fa fa-facebook logo"></a> 
+		<a href="#"	class="container fa fa-twitter logo"></a>
+		<a href="#" class="container fa fa-instagram logo"></a>
+		<a href="#" class="container fa fa-google-plus logo"></a>
+		<a href="#" class="container fa fa-whatsapp logo"></a>
 	</div>
 	<!-- Copyright -->
 	<div class="rodape">

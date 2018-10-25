@@ -4,7 +4,7 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
-import br.com.bordeau.model.Podcast;
+import br.com.bordeau.trash.Podcast;
 
 public class PodcastValidation implements Validator{
 

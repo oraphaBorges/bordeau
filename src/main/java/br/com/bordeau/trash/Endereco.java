@@ -1,4 +1,4 @@
-package br.com.bordeau.model;
+package br.com.bordeau.trash;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

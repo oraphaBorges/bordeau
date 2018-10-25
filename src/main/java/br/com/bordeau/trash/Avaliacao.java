@@ -1,10 +1,12 @@
-package br.com.bordeau.model;
+package br.com.bordeau.trash;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+
+import br.com.bordeau.model.Episodio;
 
 @Entity
 public class Avaliacao {

@@ -9,7 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.com.bordeau.DAOS.PodcastDao;
 import br.com.bordeau.infra.FileSaver;
-import br.com.bordeau.model.Podcast;
+import br.com.bordeau.trash.Podcast;
 
 @Controller
 @RequestMapping("/podcast")
