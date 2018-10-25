@@ -3,12 +3,11 @@ package br.com.bordeau.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/podcast/episodio")
-public class EpisodioController implements pagina {
+public class EpisodioController {
 	
 //	@Autowired
 //	private EpisodioDao dao;
@@ -27,12 +26,9 @@ public class EpisodioController implements pagina {
 	}
 
 	@RequestMapping(value = "/submit" ,method=RequestMethod.POST)
-	public ModelAndView enviarFormulario(MultipartFile file) {
+	public ModelAndView enviarFormulario() {
 		return new ModelAndView("podcast/episodio");
 	}
-	
-	private ModelAndView gravar() {
-		return new ModelAndView("podcast/episodio");
-	}
+
 
 }

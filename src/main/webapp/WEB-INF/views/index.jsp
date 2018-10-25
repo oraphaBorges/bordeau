@@ -4,7 +4,7 @@
 <tag:template>
 	<jsp:body>
 		<div >
-			<div class="form-signin" style="padding:100px;">
+			<div class="form-signin" style="padding:50px;">
 				  <form class="form-signin text-center">
 					<h1 class="display-3">BORDEAU</h1>
 				    <p class="lead">Uma Plataforma Muitos mais Conteúdo</p>

@@ -10,56 +10,38 @@
 </head>
 <tag:template>
 	<jsp:body>
-<div class="container" style="padding-top: 50px;">
-	<h1 class="text-center" style="padding-bottom: 10px;">Cadastro Episódio Podcast</h1>
+<div class="container" style="padding: 50px;">
 	<div class="mx-auto">
-      <form method="post" action="/bordeau/podcast/submit">
-		<div class="form-group row">
-			<label for="titulo" class="col-sm-1 col-form-label font-weight-bold"
-						style="color: #800000">Tí­tulo:</label>
-			<div class="col-sm-8">
-				<input type="text" class="form-control" id="titulo"
-							placeholder="Título do episódio" maxlength="50" required
-							onkeyup="contaTitulo();">
-				<div class="contador">
-					<span id="contador-titulo" style="color: #808080; font-size: 12px">50 caracteres restantes</span>
-				</div>
-			</div>
-		</div>
-		<div class="form-group row">
-			<label for="descricao" class="col-sm-1 col-form-label font-weight-bold"
-						style="color: #800000">Descrição:</label>
-			<div class="col-sm-8">
-				<textarea class="form-control" id="descricao" rows="3" placeholder="Descrição do episódio" maxlength="240" onkeyup="contaDescricao();"></textarea>
-				<div class="contador">
-					<span id="contador-desc" style="color: #808080; font-size: 12px">240 caracteres restantes</span>
-				</div>
-			</div>
+	  <div class="form-signin text-center">
+		<h1 class="display-3">Episódio</h1>
+		<p class="lead">Preencha todos os dados para dar um upload em seu episódio</p>
+		<hr class="featurette-divider" style="width: 40%;">
+	  </div>
+      <form method="post" action="/bordeau/podcast/episodio/submit" class="row">
+      
+		<div class="form-group col-md-4">
+		  <label for="titulo" class="font-weight-bold font-red">Titulo</label>
+		  <input type="text" class="form-control" id="titulo" placeholder="Título">
 		</div>
 
-		<div class="form-group row">
-			<label for="capa" class="col-sm-4 col-form-label font-weight-bold"
-						style="color: #800000">Enviar imagem da capa do episódio:</label>
-			<div class="col-sm-5">
-				<input type="file" class="form-control-file" id="capa"
-							accept="image/*">
-			</div>
+		<div class="form-group col-md-8">
+		    <label for="descricao" class="font-weight-bold font-red">Descrição</label>
+		    <textarea class="form-control" id="descricao" rows="2" placeholder="Digite aqui o título do seu episódio"></textarea>
+		 </div>
+		
+		
+		<div class="form-group col-md-6">
+			<label for="capa" class=" col-form-label font-weight-bold font-red">Enviar imagem da capa do episódio:</label>
+			<input type="file" class="form-control-file btn btn-outline-danger" id="capa"	accept="image/*">
 		</div>
-		<div class="form-group row">
-			<label for="audio" class="col-sm-4 col-form-label font-weight-bold"
-						style="color: #800000">Enviar o podcast do episódio:</label>
-			<div class="col-sm-5">
-				<input type="file" class="form-control-file" id="audio"
-							accept="audio/*" required>
-			</div>
+		<div class="form-group col-md-6">
+			<label for="audio" class="col-form-label font-weight-bold font-red">Enviar o podcast do episódio:</label>
+			<input type="file" class="form-control-file btn btn-outline-danger" id="audio"	accept="audio/*" required>
 		</div>
-
-
-        <div class="form-group row">
-            <label class="col font-weight-bold" style="color: #800000">Conteúdo complementar:</label>
-        </div>
-      <div class="form-group row" style="margin-bottom: 75px">
-            <div class="col">
+				
+      <div class="form-group col-md-12">
+            <label class="font-weight-bold font-red">Conteúdo complementar:</label>
+            <div class="height-cc">
                <div class="quill-wrapper">
                 <div id="toolbar" class="toolbar">
                 <span class="ql-formats">
@@ -105,12 +87,13 @@
                 </div>
             </div>
         </div>
-	<div class="form-group row">
-            <div class="col">
-                    <button class="btn font-weight-bold" onclick="submit(this)"
-							style="background-color: #800000; color: #ffffff" type="button">Concluir</button>
-              </div>
-				</div>
+
+
+    	<div class="form-group col-md-12" style="
+			    margin-top: 70px;
+			">
+	       	<button class="btn btn-danger" type="submit"><span class="oi oi-check"></span> Concluir</button>
+        </div>
       </form>
 	</div>
     </div>

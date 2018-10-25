@@ -2,3 +2,18 @@
 	max-width: 100%;
 	height: auto;
 }
+
+.font-red{
+	color:#800000;
+}
+
+.height-cc{
+	height:250px;
+}
+
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
