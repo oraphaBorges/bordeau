@@ -12,7 +12,7 @@ import br.com.bordeau.trash.Podcast;
 
 @Repository
 @Transactional
-public class PodcastDao implements DAO{
+public class PodcastDao {
 	
 	@PersistenceContext
 	private EntityManager manager; 
@@ -22,24 +22,20 @@ public class PodcastDao implements DAO{
 		return null;
 	}
 
-	@Override
 	public void gravar(Object object) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
 	public List<Podcast> listar() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
 	public void update(Object object) {
 		Podcast podcast = (Podcast) object;
 	}
 
-	@Override
 	public void remove(Object object) {
 		Podcast podcast = (Podcast) object;		
 	}

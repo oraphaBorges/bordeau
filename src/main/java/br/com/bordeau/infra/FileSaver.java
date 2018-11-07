@@ -1,7 +1,6 @@
 package br.com.bordeau.infra;
 
 import java.io.File;
-import java.io.IOException;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -15,15 +14,15 @@ public class FileSaver {
 	private HttpServletRequest request;
 
 	public String write(String baseFolder, MultipartFile file) {
+
 		try {
-			String realPath = request.getServletContext().getRealPath("/"+baseFolder);
-//	        String path = realPath +"/"+file.getOriginalFilename(); //WildFly
-	        String path = realPath + file.getOriginalFilename(); //TomCat
-	        file.transferTo(new File(path));
-	        return baseFolder + "/" + file.getOriginalFilename();
+			String realPath = request.getServletContext().getRealPath("/" + baseFolder);
+			String path = realPath + "/" + file.getOriginalFilename();
+			file.transferTo(new File(path));
 
+			return baseFolder + "/" + file.getOriginalFilename();
 
-		} catch (IllegalStateException | IOException e) {
+		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
 	}

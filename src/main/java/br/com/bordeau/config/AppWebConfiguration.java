@@ -3,6 +3,7 @@ package br.com.bordeau.config;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.format.datetime.DateFormatter;
 import org.springframework.format.datetime.DateFormatterRegistrar;
@@ -16,12 +17,14 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
-import br.com.bordeau.DAOS.EpisodioDao;
-import br.com.bordeau.DAOS.PodcastDao;
+import br.com.bordeau.DAOS.EpisodioDAO;
+import br.com.bordeau.DAOS.IndexDAO;
 import br.com.bordeau.controllers.IndexController;
+import br.com.bordeau.infra.FileSaver;
 
 @EnableWebMvc
-@ComponentScan(basePackageClasses = { IndexController.class })
+@Configuration
+@ComponentScan(basePackageClasses = { IndexController.class,FileSaver.class,EpisodioDAO.class, IndexDAO.class })
 public class AppWebConfiguration implements WebMvcConfigurer{
 
 	@Bean
