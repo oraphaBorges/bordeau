@@ -9,9 +9,8 @@
 <c:url value="/resources" var="resourcePath" />
 <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 </head>
-<tag:template>
+<tag:template-index>
 	<jsp:body>
-		
 		<div class="container" style="padding: 50px;">
 		<div class="mx-auto">
 		  <div class="form-signin text-center">
@@ -85,8 +84,8 @@
 			                <button class="ql-image"></button>
 			                </span>
 			                </div>
-			                <form:textarea id="htmlComplementar" path="htmlComplementar" cssClass="form-control height-cc" required="required"/>
-			                <div id="editor" class="editor" hidden></div>
+			                
+			                <div id="editor" class="editor height-cc" name="htmlComplementar"></div>
 			                </div>
 			            </div>
 			        </div>						
@@ -102,10 +101,10 @@
 	  <script type="text/javascript" src="${resourcePath}/JS/formulario.js"></script>
 	  <script>
 		function submit(btn){
-			document.getElementById('htmlComplementar').value = JSON.stringify(quill.getContents());
+			document.getElementById('editor').value = JSON.stringify(quill.getContents());
 			btn.form.submit();
 		}
 	  </script>
       
 	</jsp:body>
-</tag:template>
+</tag:template-index>

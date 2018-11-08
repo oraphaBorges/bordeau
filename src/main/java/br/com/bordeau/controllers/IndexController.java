@@ -25,7 +25,6 @@ public class IndexController {
 		List<Episodio> emAlta = dao.emAlta();
 		mv.addObject("novos", novos);
 		mv.addObject("emAlta", emAlta);
-		
 		return mv;
 	}
 

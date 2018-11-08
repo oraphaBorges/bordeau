@@ -10,7 +10,6 @@
 			<nav class="nav nav-masthead justify-content-center">
 				<a class="text-light" style="text-decoration:none; padding:5px;" href="/bordeau/">Home</a> 
 				<a class="text-light"	style="text-decoration:none; padding:5px;" href="/bordeau/podcast/episodio/novo">Novo Episódio</a> 
-				<a class="text-light" style="text-decoration:none; padding:5px;" href="/bordeau/podcast/episodio/submit">Episódio</a>
 			</nav>
 		</div>
 	</header>

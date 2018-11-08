@@ -17,7 +17,7 @@ public class EpisodioDAO{
 	@PersistenceContext
 	private EntityManager manager; 
 
-	public Episodio findById(Integer id) {
+	public Episodio findById(Long id) {
 		return manager.createQuery("SELECT distinct(p) FROM Episodio p "
 				+ "WHERE p.id = :id",Episodio.class)
 			.setParameter("id",id)
@@ -33,6 +33,10 @@ public class EpisodioDAO{
 		return manager.createQuery("SELECT p FROM Episodio p",Episodio.class).getResultList();
 	}
 
+	public List<Episodio> recomendacoes() {
+		return manager.createQuery("SELECT p FROM Episodio p ORDER BY RAND()",Episodio.class).setMaxResults(10).getResultList();
+	}	
+	
 	public void update(Object object) {
 		Episodio episodio = (Episodio) object;
 		manager.merge(episodio);
