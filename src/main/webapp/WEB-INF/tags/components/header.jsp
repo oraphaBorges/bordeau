@@ -9,7 +9,10 @@
 		<div class="inner">
 			<nav class="nav nav-masthead justify-content-center">
 				<a class="text-light" style="text-decoration:none; padding:5px;" href="/bordeau/">Home</a> 
-				<a class="text-light"	style="text-decoration:none; padding:5px;" href="/bordeau/podcast/episodio/novo">Novo Episódio</a> 
+				<a class="text-light"	style="text-decoration:none; padding:5px;" href="/bordeau/podcast/novo">Novo Podcast</a> 
+				<a class="text-light"	style="text-decoration:none; padding:5px;" href="/bordeau/podcast/episodio/novo">Novo Episodio</a> 
+				<a class="text-light"	style="text-decoration:none; padding:5px;" href="/bordeau/usuarios">Usuarios</a> 
+				<a class="text-light"	style="text-decoration:none; padding:5px;" href="/bordeau/logout">Sair</a> 
 			</nav>
 		</div>
 	</header>

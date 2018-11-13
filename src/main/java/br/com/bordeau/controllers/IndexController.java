@@ -10,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.com.bordeau.DAOS.IndexDAO;
 import br.com.bordeau.model.Episodio;
+import br.com.bordeau.model.Podcast;
 
 @Controller
 @RequestMapping("/")
@@ -20,11 +21,19 @@ public class IndexController {
 	
 	@RequestMapping(method=RequestMethod.GET)
 	public ModelAndView mostrar(){
+		
 		ModelAndView mv = new ModelAndView("index");
-		List<Episodio> novos = dao.novos();
-		List<Episodio> emAlta = dao.emAlta();
-		mv.addObject("novos", novos);
-		mv.addObject("emAlta", emAlta);
+		
+		List<Episodio> novosEpisodios = dao.novosEpisodios();
+		List<Episodio> EpisodiosEmAlta = dao.EpisodiosEmAlta();
+		mv.addObject("novosEpisodios", novosEpisodios);
+		mv.addObject("EpisodiosEmAlta", EpisodiosEmAlta);
+
+		List<Podcast> novosPodcasts = dao.novosPodcasts();
+		List<Podcast> PodcastsEmAlta = dao.PodcastsEmAlta();
+		mv.addObject("novosPodcasts", novosPodcasts);
+		mv.addObject("PodcastsEmAlta", PodcastsEmAlta);
+		
 		return mv;
 	}
 

@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 import br.com.bordeau.DAOS.EpisodioDAO;
 import br.com.bordeau.infra.FileSaver;
 import br.com.bordeau.model.Episodio;
+import br.com.bordeau.model.Podcast;
 
 @Controller
 @RequestMapping("/podcast/episodio")
@@ -35,11 +36,11 @@ public class EpisodioController {
 		return mv;
 	}
 	
-
 	@RequestMapping(value = "/novo" ,method=RequestMethod.GET)
-	public ModelAndView exibirFormulario() {
+	public ModelAndView exibirFormulario(Podcast podcast) {
 		ModelAndView mv = new ModelAndView("podcast/formularioEpisodio");
 		mv.addObject("episodio", new Episodio());
+		mv.addObject("podcast", podcast);
 		return mv;
 	}
 
@@ -54,10 +55,12 @@ public class EpisodioController {
 			episodio.setHtmlComplementar(htmlComplementar);
 			
 			dao.gravar(episodio);
+			
 		} catch (Exception e) {
-			System.out.println("Ops deu ruim");
+			System.out.println("não gravou o epsiodio");
+			
 		}
-		return exibirPagina(episodio.getId());
+		return new ModelAndView("redirect:/");
 	}
 
 

@@ -7,7 +7,7 @@
 <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 <link href="${resourcePath}/css/episodio.css" rel="stylesheet">
 </head>
-<tag:template>
+<tag:template-episodio>
 	<jsp:body>
 		<div class="mx-auto">
 		  <div class="form-signin text-center" style="margin-top: 30px;">
@@ -21,7 +21,7 @@
 		<div class="row">
 		  <div class="row mx-auto">
 		  
-				<p class="col-12" id="descricao">${episodio.descricao}</p>
+				<p class="col-12" id="descricao">${episodio.descricao} </p>
 
 				<div class="col-12">
                     <div id="waveform"></div>
@@ -47,9 +47,7 @@
 	<script src="${resourcePath}/JS/imagesloaded.pkgd.min.js"></script>
 	<script src="${resourcePath}/JS/jquery-imagefill.js"></script>
 	<script src="${resourcePath}/JS/quill/quill.min.js"></script>
-	<script type="text/javascript">
-		$('#episodio-capa').imagefill();
-	</script>
+	<script type="text/javascript">$('#episodio-capa').imagefill();</script>
 		
 	<script type="text/javascript">
 		$(document).ready(		
@@ -70,14 +68,7 @@
     </script>
     <!-- player audio -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.2.3/wavesurfer.min.js"></script>
-    <script type="text/javascript" one="${episodio.audioPath}">
-    var wavesurfer = WaveSurfer.create({
-    	  container: '#waveform',
-    	  waveColor: '#800000',
-    	  progressColor: 'purple'
-    	});
-
-    	wavesurfer.load(document.currentScript.getAttribute('one'));
-    </script>
+    <script type="text/javascript" src="${resourcePath}/JS/player.js" one="/bordeau/${episodio.audio}" ></script>
+    
 	</jsp:body>
-</tag:template>
+</tag:template-episodio>

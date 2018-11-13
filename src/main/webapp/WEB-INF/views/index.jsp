@@ -17,18 +17,85 @@
 				  </form>
 			</div>
 			<div class="" id="podcasts" >
-			
+
 				<div class="pricing-header mx-auto text-center">
 			      <p class="lead">Acompanhe o melhor dos podcasts em todo mundo!</p>
 			    </div>
-			
-				<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-				    <h1 class="display-4">Mais recentes</h1>
+
+			<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+				    <h1 class="display-4">Podcasts Mais recentes</h1>
 					<hr class="featurette-divider" style="width: 40%;">
 					<div class="album py-5 bg-light">
 				        <div class="container">
 				          <div class="row">
-				          <c:forEach items="${novos}" var="novoEpisodio">
+				          <c:forEach items="${novosPodcasts}" var="novoPodcast">
+				          	<a href="${s:mvcUrl('PC#exibirPagina').arg(0,novoPodcast.id).build()}">
+				            <div class="col-md-4">
+				              <div class="card mb-4 shadow-sm">
+				                <img class="card-img-top" src="${novoPodcast.capaPath}" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" data-holder-rendered="true">
+				                <div class="card-body">
+				                  <a href="" class="text-dark"><h4 class="text-dark">${novoPodcast.nome}</h4></a>
+				                  <p class="card-text">${novoEpisodio.descricao}</p>
+				                  <div class="d-flex justify-content-between align-items-center">
+				                    <div class="btn-group">
+				                      <a href="" class="text-dark"><button type="button" class="btn btn-sm btn-outline-secondary">conheça o podcast</button></a>
+				                    </div>
+				                    <small class="text-muted"> 5 / 5 Estrelas </small>
+				                  </div>
+				                </div>
+				              </div>
+				            </div>
+				          	</a>
+						  </c:forEach>
+
+				       </div>
+				     </div>
+				</div>
+				</div>
+
+				<div class="pricing-header mx-auto text-center">
+				    <h1 class="display-4">Podcasts Em Alta</h1>
+					<hr class="featurette-divider" style="width: 40%;">
+					<div class="album py-5 bg-light">
+				       <div class="container">
+				         <div class="row">
+
+						<c:forEach items="${PodcastsEmAlta}" var="podcastEmAlta">
+						  <a href="${s:mvcUrl('PC#exibirPagina').arg(0,podcastEmAlta.id).build()}">
+				          <div class="col-md-4">
+				              <div class="card mb-4 shadow-sm">
+				                <img class="card-img-top" src="${podcastEmAlta.capaPath}" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;"  data-holder-rendered="true">
+				                <div class="card-body">
+				                  <a href="" class="text-dark"><h4 class="text-dark">${podcastEmAlta.nome}</h4></a>
+				                  <p class="card-text">${podcastEmAlta.descricao}</p>
+				                  <div class="d-flex justify-content-between align-items-center">
+				                    <div class="btn-group">
+				                      <a href="" class="text-dark"><button type="button" class="btn btn-sm btn-outline-secondary">conheça o podcast</button></a>
+				                    </div>
+				                    <small class="text-muted"> 5 / 5 Estrelas </small>
+				                  </div>
+				                </div>
+				              </div>
+				            </div>
+				            </a>
+				          </c:forEach>
+
+
+				          </div>
+				        </div>
+				      </div>
+				</div>
+
+
+
+
+				<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+				    <h1 class="display-4">Episódios Mais recentes</h1>
+					<hr class="featurette-divider" style="width: 40%;">
+					<div class="album py-5 bg-light">
+				        <div class="container">
+				          <div class="row">
+				          <c:forEach items="${novosEpisodios}" var="novoEpisodio">
 				          	<a href="${s:mvcUrl('EC#exibirPagina').arg(0,novoEpisodio.id).build()}">
 				            <div class="col-md-4">
 				              <div class="card mb-4 shadow-sm">
@@ -47,20 +114,20 @@
 				            </div>
 				          	</a>
 						  </c:forEach>
-				            
+
 				       </div>
 				     </div>
 				</div>
 				</div>
-				
+
 				<div class="pricing-header mx-auto text-center">
-				    <h1 class="display-4">Em Alta</h1>
+				    <h1 class="display-4">Episódios Em Alta</h1>
 					<hr class="featurette-divider" style="width: 40%;">
 					<div class="album py-5 bg-light">
 				       <div class="container">
 				         <div class="row">
-				
-						<c:forEach items="${emAlta}" var="episodioEmAlta">
+
+						<c:forEach items="${EpisodiosEmAlta}" var="episodioEmAlta">
 						  <a href="${s:mvcUrl('EC#exibirPagina').arg(0,episodioEmAlta.id).build()}">
 				          <div class="col-md-4">
 				              <div class="card mb-4 shadow-sm">
@@ -79,8 +146,8 @@
 				            </div>
 				            </a>
 				          </c:forEach>
-				            
-	
+
+
 				          </div>
 				        </div>
 				      </div>

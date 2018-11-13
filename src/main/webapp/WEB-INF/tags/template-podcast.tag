@@ -20,14 +20,14 @@
 <div style="min-height: 100px">
 	<div>
 		<div id="sucesso" class="col-12"></div>
-		<div class="col-sm-12 parallax" id="episodio-capa" style="weight:100%;height: 200px; background-image: url('https://ondeficaremsuaviagem.com/wp-content/uploads/2017/03/onde-ficar-bordeaux.jpg');"></div>
+		<div class="col-sm-12 parallax" id="episodio-capa" style="weight:100%;height: 200px; background-image: url('/bordeau/${podcast.capaPath}');"></div>
 	</div>
 	<div class="row mx-auto" style="min-height: 100%">
-		<section class="col-sm-12 col-md-8 col-lg-8">
+		<section class="col-sm-12 col-md-12 col-lg-12">
 			<jsp:doBody />
 		</section>
-		<section class="col-sm-12 col-md-4 col-lg-4">
-			<%@include file="components/recomendations.jsp"%>
+		<section class="col-sm-12 col-md-12 col-lg-12">
+			<%@include file="components/recomendationsPodcast.jsp"%>
 		</section>
 	</div>
 </div>

@@ -8,7 +8,7 @@
 				style="min-width: 150px; min-height: 160px; margin-top: 10px;">
 				<div class="card-body bg-light">
 					<div class="row">
-						<img class="card-img-top col-5" src="/bordeau/${episodioRecomendado.capa}" alt="Card image cap" style="height: 160px;width: 160px;" data-holder-rendered="true" >
+						<img class="card-img-top col-5" src="/bordeau/${episodioRecomendado.capa}" alt="Card image cap" style="height: 100px;width: 170px;" data-holder-rendered="true" >
 						<div class="col-7 small">
 							<h5 class="card-title">${episodioRecomendado.titulo}</h5>
 							<p class="card-text">${episodioRecomendado.descricao}.</p>

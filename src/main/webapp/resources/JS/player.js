@@ -4,7 +4,7 @@ var wavesurfer = WaveSurfer.create({
   progressColor: 'purple'
 });
 
-wavesurfer.load('/bordeau/audios/bensound-hey.mp3');
+wavesurfer.load(document.currentScript.getAttribute('one'));
 
 
 

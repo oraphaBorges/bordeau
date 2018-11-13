@@ -17,14 +17,17 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
+import br.com.bordeau.DAOS.AuthenticationDAO;
 import br.com.bordeau.DAOS.EpisodioDAO;
 import br.com.bordeau.DAOS.IndexDAO;
+import br.com.bordeau.DAOS.PodcastDAO;
+import br.com.bordeau.DAOS.UsuarioDAO;
 import br.com.bordeau.controllers.IndexController;
 import br.com.bordeau.infra.FileSaver;
 
 @EnableWebMvc
 @Configuration
-@ComponentScan(basePackageClasses = { IndexController.class,FileSaver.class,EpisodioDAO.class, IndexDAO.class })
+@ComponentScan(basePackageClasses = { IndexController.class,FileSaver.class,EpisodioDAO.class, IndexDAO.class, PodcastDAO.class, AuthenticationDAO.class ,UsuarioDAO.class })
 public class AppWebConfiguration implements WebMvcConfigurer{
 
 	@Bean
