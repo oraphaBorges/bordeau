@@ -14,8 +14,6 @@ import org.springframework.transaction.annotation.Transactional;
 import br.com.bordeau.model.Role;
 import br.com.bordeau.model.Usuario;
 
-
-
 @Repository
 @Transactional
 public class UsuarioDAO {
@@ -24,19 +22,20 @@ public class UsuarioDAO {
 	private EntityManager manager;
 	
 	public Usuario findByEmail(String email) {
-		List<Usuario> usuarios = manager
+		Usuario usuario = manager
 				.createQuery("SELECT u FROM Usuario u WHERE u.email = :email",
 				Usuario.class)
 		.setParameter("email", email)
-		.getResultList();
+		.getSingleResult();
 		
-		if(usuarios.isEmpty()) {
+		if(usuario == null) {
 			throw new UsernameNotFoundException ("Usuário "+email+" não exite");
 		}
-		return usuarios.get(0);
+		System.out.println("Usuario Existe:" + usuario.getEmail());
+		return usuario;
 	}
 	
-	public void adicionaUsuario(Usuario usuario){
+	public void gravar(Usuario usuario){
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         String hasSenha = passwordEncoder.encode(usuario.getSenha());
         usuario.setSenha(hasSenha);

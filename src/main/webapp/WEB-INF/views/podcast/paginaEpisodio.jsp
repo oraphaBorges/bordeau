@@ -11,7 +11,7 @@
 	<jsp:body>
 		<div class="mx-auto">
 		  <div class="form-signin text-center" style="margin-top: 30px;">
-			<a id="nome-criador" class="font-weight-bold" href="https://twitter.com/_pequenospoemas"><h1 class="display-3">Pequenos Poemas</h1></a>
+			<a id="nome-criador" class="font-weight-bold" href="https://twitter.com/_pequenospoemas"><h1 class="display-3">${Podcast.nome}</h1></a>
 			<h4 id="titulo">${episodio.titulo}</h4>
 			<p id="data-postagem">01 de outubro de 2018</p>
 			<hr class="featurette-divider" style="width: 40%;">

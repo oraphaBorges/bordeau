@@ -3,6 +3,8 @@ package br.com.bordeau.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,9 +13,12 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.bordeau.DAOS.EpisodioDAO;
+import br.com.bordeau.DAOS.PodcastDAO;
+import br.com.bordeau.DAOS.UsuarioDAO;
 import br.com.bordeau.infra.FileSaver;
 import br.com.bordeau.model.Episodio;
 import br.com.bordeau.model.Podcast;
+import br.com.bordeau.model.Usuario;
 
 @Controller
 @RequestMapping("/podcast/episodio")
@@ -22,6 +27,12 @@ public class EpisodioController {
 	@Autowired
 	private EpisodioDAO dao;
 	
+	@Autowired
+	private PodcastDAO podcastDAO;
+	
+	@Autowired
+	private UsuarioDAO usuarioDAO;
+
 	@Autowired
 	private FileSaver fileSaver;
 
@@ -53,6 +64,10 @@ public class EpisodioController {
 			path = fileSaver.write("audios", files[1]);
 			episodio.setAudio(path);
 			episodio.setHtmlComplementar(htmlComplementar);
+			
+			Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+			Usuario usuario = usuarioDAO.findByEmail(authentication.getName());
+
 			
 			dao.gravar(episodio);
 			

@@ -20,7 +20,7 @@ public class Podcast {
 	private String descricao;
 	private String capaPath;
 	
-	@OneToMany(fetch=FetchType.EAGER)
+	@OneToMany(fetch=FetchType.LAZY)
 	private List<Episodio> episodios = new ArrayList<Episodio>();
 	
 	// Getters && Setters

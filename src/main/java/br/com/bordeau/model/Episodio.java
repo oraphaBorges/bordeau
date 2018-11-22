@@ -1,6 +1,5 @@
 package br.com.bordeau.model;
 
-import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,6 +16,7 @@ public class Episodio {
 	private String descricao;
 	private String capa;
 	private String htmlComplementar;
+		
 	
 	//Getters e Setters
 	public Long getId() {
@@ -55,4 +55,5 @@ public class Episodio {
 	public void setHtmlComplementar(String htmlComplementar) {
 		this.htmlComplementar = htmlComplementar;
 	}
+
 }

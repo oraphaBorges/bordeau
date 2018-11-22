@@ -27,7 +27,7 @@ import br.com.bordeau.infra.FileSaver;
 
 @EnableWebMvc
 @Configuration
-@ComponentScan(basePackageClasses = { IndexController.class,FileSaver.class,EpisodioDAO.class, IndexDAO.class, PodcastDAO.class, AuthenticationDAO.class ,UsuarioDAO.class })
+@ComponentScan(basePackageClasses = { IndexController.class,FileSaver.class,EpisodioDAO.class, IndexDAO.class, PodcastDAO.class, AuthenticationDAO.class ,UsuarioDAO.class})
 public class AppWebConfiguration implements WebMvcConfigurer{
 
 	@Bean

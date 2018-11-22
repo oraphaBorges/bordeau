@@ -9,7 +9,8 @@
 	<jsp:body>
 	<h1>Estoque</h1>
 	<div>${resultado}</div>
-	<a href="${s:mvcUrl('UC#form').build()}">Cadastrar Usuário</a>
+	<a href="${s:mvcUrl('UC#formOuvinte').build()}">Cadastrar Ouvinte</a>
+	<a href="${s:mvcUrl('UC#formCreator').build()}">Cadastrar Criador</a>
 	<table class="table table-bordered table-striped table-hover">
 		<a href="https://bcrypt-generator.com/">BCrypter Calculator</a>
 		<tr>

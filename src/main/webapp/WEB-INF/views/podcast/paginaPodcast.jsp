@@ -11,7 +11,6 @@
 			<h4 id="titulo"></h4>
 			<hr class="featurette-divider" style="width: 40%;">
 		  </div>
-		  
 		  			<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
 				    <h1 class="display-4">Episodios</h1>
 					<hr class="featurette-divider" style="width: 40%;">

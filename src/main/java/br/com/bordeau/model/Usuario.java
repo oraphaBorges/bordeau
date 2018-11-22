@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -22,7 +22,10 @@ public class Usuario implements UserDetails {
 	private String senha;
 	private String nome;
 	
-	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
+	@OneToOne
+	private Podcast podcast;
+	
+	@OneToMany(fetch=FetchType.EAGER)
 	private List<Role> roles = new ArrayList<Role>();
 
 	@Override
@@ -58,6 +61,14 @@ public class Usuario implements UserDetails {
 	@Override
 	public boolean isEnabled() {
 		return true;
+	}
+
+	public Podcast getPodcast() {
+		return podcast;
+	}
+
+	public void setPodcast(Podcast podcast) {
+		this.podcast = podcast;
 	}
 
 	public String getEmail() {

@@ -38,7 +38,7 @@
 				                  <p class="card-text">${novoEpisodio.descricao}</p>
 				                  <div class="d-flex justify-content-between align-items-center">
 				                    <div class="btn-group">
-				                      <a href="" class="text-dark"><button type="button" class="btn btn-sm btn-outline-secondary">conheça o podcast</button></a>
+				                      <a href="${s:mvcUrl('PC#exibirPagina').arg(0,novoPodcast.id).build()}" class="text-dark"><button type="button" class="btn btn-sm btn-outline-secondary">conheça o podcast</button></a>
 				                    </div>
 				                    <small class="text-muted"> 5 / 5 Estrelas </small>
 				                  </div>
@@ -70,7 +70,7 @@
 				                  <p class="card-text">${podcastEmAlta.descricao}</p>
 				                  <div class="d-flex justify-content-between align-items-center">
 				                    <div class="btn-group">
-				                      <a href="" class="text-dark"><button type="button" class="btn btn-sm btn-outline-secondary">conheça o podcast</button></a>
+				                      <a href="${s:mvcUrl('PC#exibirPagina').arg(0,podcastEmAlta.id).build()}" class="text-dark"><button type="button" class="btn btn-sm btn-outline-secondary">conheça o podcast</button></a>
 				                    </div>
 				                    <small class="text-muted"> 5 / 5 Estrelas </small>
 				                  </div>
