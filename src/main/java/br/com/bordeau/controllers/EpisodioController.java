@@ -1,5 +1,6 @@
 package br.com.bordeau.controllers;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,9 +59,9 @@ public class EpisodioController {
 			Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 			Usuario usuario = usuarioDAO.findByEmail(authentication.getName());
 			
-			usuario.getPodcast().getEpisodios().add(episodio);
-			epsiodioDAO.gravar(episodio);
+			usuario.getPodcast().setEpisodios(Arrays.asList(episodio));
 			usuarioDAO.update(usuario);
+			epsiodioDAO.gravar(episodio);
 			
 		} catch (Exception e) {
 			System.out.println("não gravou o epsiodio");

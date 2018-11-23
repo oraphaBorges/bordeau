@@ -1,5 +1,6 @@
 package br.com.bordeau.controllers;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import br.com.bordeau.DAOS.PodcastDAO;
 import br.com.bordeau.DAOS.UsuarioDAO;
 import br.com.bordeau.infra.FileSaver;
+import br.com.bordeau.model.Role;
 import br.com.bordeau.model.Usuario;
 
 
@@ -35,6 +37,7 @@ public class UsuarioController {
 				usuario.getPodcast().setCapaPath(path);
 				usuario.getPodcast().setAtivo(true);
 			}
+			usuario.setRoles(Arrays.asList(new Role("ROLE_CRIADOR"),new Role("ROLE_OUVINTE")));
 			podcastDAO.gravar(usuario.getPodcast());
 			usuarioDAO.gravar(usuario);
 			redirectAttributes.addFlashAttribute("sucesso",	"usuario" + usuario.getNome() + " cadastrado com sucesso!");

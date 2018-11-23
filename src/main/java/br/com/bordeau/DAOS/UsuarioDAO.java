@@ -1,6 +1,5 @@
 package br.com.bordeau.DAOS;
 
-import java.util.Arrays;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -11,7 +10,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.com.bordeau.model.Role;
 import br.com.bordeau.model.Usuario;
 
 @Repository
@@ -36,7 +34,7 @@ public class UsuarioDAO {
 		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 		String hasSenha = passwordEncoder.encode(usuario.getSenha());
 		usuario.setSenha(hasSenha);
-		usuario.setRoles(Arrays.asList(new Role("ROLE_CRIADOR")));
+		
 		manager.persist(usuario);
 	}
 

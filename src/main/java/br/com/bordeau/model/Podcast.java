@@ -3,6 +3,7 @@ package br.com.bordeau.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -24,9 +25,8 @@ public class Podcast {
 	private String capaPath;
 	private Boolean ativo = false;
 	
-	@OneToMany(fetch = FetchType.EAGER)
-	@Fetch(FetchMode.SUBSELECT)
-	private List<Episodio> episodios = new ArrayList<Episodio>();
+	@OneToMany(fetch = FetchType.EAGER, cascade=CascadeType.PERSIST) @Fetch(FetchMode.SELECT)
+	private List<Episodio> episodios = new ArrayList<>();
 	
 	// Getters && Setters
 	
