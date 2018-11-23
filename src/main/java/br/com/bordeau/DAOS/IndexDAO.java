@@ -29,12 +29,12 @@ public class IndexDAO {
 	}
 
 	public List<Podcast> novosPodcasts() {
-		return manager.createQuery("SELECT p FROM Podcast p ORDER BY RAND() ", Podcast.class).setMaxResults(3)
+		return manager.createQuery("SELECT p FROM Podcast p WHERE ativo = true ORDER BY RAND()", Podcast.class).setMaxResults(3)
 				.getResultList();
 	}
 
 	public List<Podcast> PodcastsEmAlta() {
-		return manager.createQuery("SELECT p FROM Podcast p ORDER BY RAND() ", Podcast.class).setMaxResults(6)
+		return manager.createQuery("SELECT p FROM Podcast p WHERE ativo = true ORDER BY RAND() ", Podcast.class).setMaxResults(6)
 				.getResultList();
 	}
 }

@@ -20,31 +20,32 @@ public class UsuarioDAO {
 
 	@PersistenceContext
 	private EntityManager manager;
-	
+
 	public Usuario findByEmail(String email) {
-		Usuario usuario = manager
-				.createQuery("SELECT u FROM Usuario u WHERE u.email = :email",
-				Usuario.class)
-		.setParameter("email", email)
-		.getSingleResult();
-		
-		if(usuario == null) {
-			throw new UsernameNotFoundException ("Usuário "+email+" não exite");
+		Usuario usuario = manager.createQuery("SELECT u FROM Usuario u WHERE u.email = :email", Usuario.class)
+				.setParameter("email", email).getSingleResult();
+
+		if (usuario == null) {
+			throw new UsernameNotFoundException("Usuário " + email + " não exite");
 		}
 		System.out.println("Usuario Existe:" + usuario.getEmail());
 		return usuario;
 	}
-	
-	public void gravar(Usuario usuario){
-        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        String hasSenha = passwordEncoder.encode(usuario.getSenha());
-        usuario.setSenha(hasSenha);
-        usuario.setRoles(Arrays.asList(new Role("ROLE_ADMIN")));
-        manager.persist(usuario);
-        }
 
-    public List<Usuario> lista() {
-        return manager.createQuery("SELECT u FROM Usuario u", Usuario.class).getResultList();
-    }
+	public void gravar(Usuario usuario) {
+		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+		String hasSenha = passwordEncoder.encode(usuario.getSenha());
+		usuario.setSenha(hasSenha);
+		usuario.setRoles(Arrays.asList(new Role("ROLE_CRIADOR")));
+		manager.persist(usuario);
+	}
+
+	public List<Usuario> lista() {
+		return manager.createQuery("SELECT u FROM Usuario u", Usuario.class).getResultList();
+	}
+
+	public void update(Usuario usuario) {
+		manager.merge(usuario);
+	}
 
 }

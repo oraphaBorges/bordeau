@@ -13,7 +13,7 @@
 			<p class="lead"></p>
 			<hr class="featurette-divider" style="width: 40%;">
 		</div>
-		<form:form servletRelativeAction="${s:mvcUrl('UC#grava').build()}" method="post"	modelAttribute="criadordeconteudo" enctype="multipart/form-data">
+		<form:form servletRelativeAction="${s:mvcUrl('UC#gravar').build()}" method="post"	modelAttribute="criadordeconteudo" enctype="multipart/form-data">
 			<div class="container" style="padding: 50px;">
 				<div class="mx-auto">
 					<div class="container" style="padding: 50px;">
@@ -23,7 +23,7 @@
 								<hr class="featurette-divider" style="width: 40%;">
 							</div>
 							<div class="form-group">
-								<<form:input path="nome"  cssClass="form-control" required="required" placeholder="Nome completo"/>
+								<form:input path="nome"  cssClass="form-control" required="required" placeholder="Nome completo"/>
 							</div>
 							<div class="form-group">
 								<form:input path="email"  cssClass="form-control" required="required" placeholder="E-mail"/>

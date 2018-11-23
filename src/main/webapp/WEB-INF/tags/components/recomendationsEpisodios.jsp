@@ -2,6 +2,7 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
 
 <section style="margin: 20px;">
+	<p>Recomendações:</p>
 	<c:forEach items="${recomendados}" var="episodioRecomendado">
 		<a href="${s:mvcUrl('EC#exibirPagina').arg(0,episodioRecomendado.id).build()}">
 			<div class="card"

@@ -28,11 +28,13 @@ public class UsuarioController {
 
 	@RequestMapping(method = RequestMethod.POST)
 	@CacheEvict(value="usuarios", allEntries=true)
-	public ModelAndView grava(Usuario usuario, MultipartFile[] files, RedirectAttributes redirectAttributes) {
+	public ModelAndView gravar(Usuario usuario, MultipartFile[] files, RedirectAttributes redirectAttributes) {
 		try {
-			String path = fileSaver.write("capas", files[0]);
-			usuario.getPodcast().setCapaPath(path);// ta com problema aqui
-	
+			if(usuario.getPodcast().getNome() != null) {
+				String path = fileSaver.write("capas", files[0]);
+				usuario.getPodcast().setCapaPath(path);
+				usuario.getPodcast().setAtivo(true);
+			}
 			podcastDAO.gravar(usuario.getPodcast());
 			usuarioDAO.gravar(usuario);
 			redirectAttributes.addFlashAttribute("sucesso",	"usuario" + usuario.getNome() + " cadastrado com sucesso!");
@@ -41,7 +43,7 @@ public class UsuarioController {
 		}
 		return new ModelAndView("redirect:/");
 	}
-
+	
 	@RequestMapping("/cadastroCriadordeConteudo")
 	public ModelAndView formCreator(Usuario usuario) {
 		ModelAndView modelAndView = new ModelAndView("usuarios/cadastro_criadordeconteudo");

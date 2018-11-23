@@ -13,7 +13,7 @@
 			<p class="lead"></p>
 			<hr class="featurette-divider" style="width: 40%;">
 		</div>
-		<form:form servletRelativeAction="${s:mvcUrl('UC#grava').build()}" method="post"	modelAttribute="ouvinte" enctype="multipart/form-data">
+		<form:form servletRelativeAction="${s:mvcUrl('UC#gravar').build()}" method="post"	modelAttribute="ouvinte" enctype="multipart/form-data">
 			<div class="container" style="padding: 50px;">
 				<div class="mx-auto">
 					

@@ -26,7 +26,7 @@
 			<td>${usuario.senha}</td>
 			<td>
 				<c:forEach items="${usuario.roles}" var="role"> 
-					${role.nome}
+					<p>${role.nome}</p>
 				</c:forEach>
 			</td>
 		</tr>

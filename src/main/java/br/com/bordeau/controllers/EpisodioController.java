@@ -13,7 +13,6 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.bordeau.DAOS.EpisodioDAO;
-import br.com.bordeau.DAOS.PodcastDAO;
 import br.com.bordeau.DAOS.UsuarioDAO;
 import br.com.bordeau.infra.FileSaver;
 import br.com.bordeau.model.Episodio;
@@ -24,24 +23,15 @@ import br.com.bordeau.model.Usuario;
 @RequestMapping("/podcast/episodio")
 public class EpisodioController {
 	
-	@Autowired
-	private EpisodioDAO dao;
-	
-	@Autowired
-	private PodcastDAO podcastDAO;
-	
-	@Autowired
-	private UsuarioDAO usuarioDAO;
-
-	@Autowired
-	private FileSaver fileSaver;
-
+	@Autowired	private EpisodioDAO epsiodioDAO;
+	@Autowired  private UsuarioDAO usuarioDAO;
+	@Autowired	private FileSaver fileSaver;
 	
 	@RequestMapping(value = "/{id}" , method=RequestMethod.GET)
 	public ModelAndView exibirPagina(@PathVariable("id") Long id) {
-		Episodio episodio = dao.findById(id);
+		Episodio episodio = epsiodioDAO.findById(id);
 		ModelAndView mv = new ModelAndView("podcast/paginaEpisodio");
-		List<Episodio> recomendados = dao.recomendacoes();
+		List<Episodio> recomendados = epsiodioDAO.recomendacoes();
 		mv.addObject("recomendados", recomendados);
 		mv.addObject("episodio", episodio);
 		return mv;
@@ -67,9 +57,10 @@ public class EpisodioController {
 			
 			Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 			Usuario usuario = usuarioDAO.findByEmail(authentication.getName());
-
 			
-			dao.gravar(episodio);
+			usuario.getPodcast().getEpisodios().add(episodio);
+			epsiodioDAO.gravar(episodio);
+			usuarioDAO.update(usuario);
 			
 		} catch (Exception e) {
 			System.out.println("não gravou o epsiodio");

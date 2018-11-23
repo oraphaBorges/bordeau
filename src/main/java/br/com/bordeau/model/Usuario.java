@@ -23,14 +23,14 @@ public class Usuario implements UserDetails {
 	private String nome;
 	
 	@OneToOne
-	private Podcast podcast;
+	private Podcast podcast = new Podcast();
 	
 	@OneToMany(fetch=FetchType.EAGER)
 	private List<Role> roles = new ArrayList<Role>();
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		return this.roles;
+		return this.getRoles();
 	}
 
 	@Override
@@ -102,4 +102,5 @@ public class Usuario implements UserDetails {
 	public void setRoles(List<Role> roles) {
 		this.roles = roles;
 	}
+
 }

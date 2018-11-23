@@ -10,6 +10,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 @Entity
 public class Podcast {
 	
@@ -19,8 +22,10 @@ public class Podcast {
 	private String nome;
 	private String descricao;
 	private String capaPath;
+	private Boolean ativo = false;
 	
-	@OneToMany(fetch=FetchType.LAZY)
+	@OneToMany(fetch = FetchType.EAGER)
+	@Fetch(FetchMode.SUBSELECT)
 	private List<Episodio> episodios = new ArrayList<Episodio>();
 	
 	// Getters && Setters
@@ -48,6 +53,13 @@ public class Podcast {
 	}
 	public void setCapaPath(String capaPath) {
 		this.capaPath = capaPath;
+	}
+
+	public Boolean getAtivo() {
+		return ativo;
+	}
+	public void setAtivo(Boolean ativo) {
+		this.ativo = ativo;
 	}
 	public List<Episodio> getEpisodios() {
 		return episodios;
