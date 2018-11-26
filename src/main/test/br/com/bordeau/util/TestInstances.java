@@ -2,9 +2,9 @@ package br.com.bordeau.util;
 
 import java.util.Random;
 
-import br.com.bordeau.model.Endereco;
-import br.com.bordeau.model.Usuario;
 import br.com.bordeau.model.enums.TipoUsuario;
+import br.com.bordeau.trash.Endereco;
+import br.com.bordeau.trash.Usuario;
 
 public class TestInstances {
 	

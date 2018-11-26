@@ -1,66 +1,107 @@
 package br.com.bordeau.model;
 
-import java.sql.Date;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
-import br.com.bordeau.model.enums.TipoUsuario;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 @Entity
-public class Usuario {
-	@Id  @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	private String nome;
+public class Usuario implements UserDetails {
+
+	private static final long serialVersionUID = 1L;
+	@Id
 	private String email;
 	private String senha;
-	private Date dataNascimento;
-	private Endereco endereco;
-	private TipoUsuario tipoUsuario;
+	private String nome;
 	
-	//Getters e Setters
-	public Long getId() {
-		return id;
+	@OneToOne
+	private Podcast podcast = new Podcast();
+	
+	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
+	private List<Role> roles = new ArrayList<>();
+
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		return this.getRoles();
 	}
-	public void setId(Long id) {
-		this.id = id;
+
+	@Override
+	public String getPassword() {
+		return this.senha;
 	}
-	public String getNome() {
-		return nome;
+
+	@Override
+	public String getUsername() {
+		return this.email;
 	}
-	public void setNome(String nome) {
-		this.nome = nome;
+
+	@Override
+	public boolean isAccountNonExpired() {
+		return true;
 	}
+
+	@Override
+	public boolean isAccountNonLocked() {
+		return true;
+	}
+
+	@Override
+	public boolean isCredentialsNonExpired() {
+		return true;
+	}
+
+	@Override
+	public boolean isEnabled() {
+		return true;
+	}
+
+	public Podcast getPodcast() {
+		return podcast;
+	}
+
+	public void setPodcast(Podcast podcast) {
+		this.podcast = podcast;
+	}
+
 	public String getEmail() {
 		return email;
 	}
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
 	public String getSenha() {
 		return senha;
 	}
+
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	public Date getDataNascimento() {
-		return dataNascimento;
+
+	public String getNome() {
+		return nome;
 	}
-	public void setDataNascimento(Date dataNascimento) {
-		this.dataNascimento = dataNascimento;
+
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
-	public Endereco getEndereco() {
-		return endereco;
+
+	public List<Role> getRoles() {
+		return roles;
 	}
-	public void setEndereco(Endereco endereco) {
-		this.endereco = endereco;
+
+	public void setRoles(List<Role> roles) {
+		this.roles = roles;
 	}
-	public TipoUsuario getTipoUsuario() {
-		return tipoUsuario;
-	}
-	public void setTipoUsuario(TipoUsuario tipoUsuario) {
-		this.tipoUsuario = tipoUsuario;
-	}
-	
+
 }

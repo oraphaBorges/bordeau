@@ -1,31 +1,22 @@
 package br.com.bordeau.model;
 
-import java.util.List;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 
 @Entity
 public class Episodio {
+	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
 	private String titulo;
 	private String audioPath;
-	@Column(length=140)
 	private String descricao;
 	private String capa;
 	private String htmlComplementar;
-	@OneToMany
-	private List<Comentario> comentarios;
-	@OneToMany
-	private List<Avaliacao> avaliacoes;
-	@ManyToOne
-	private Playlist playlist;
+		
 	
 	//Getters e Setters
 	public Long getId() {
@@ -64,23 +55,5 @@ public class Episodio {
 	public void setHtmlComplementar(String htmlComplementar) {
 		this.htmlComplementar = htmlComplementar;
 	}
-	public List<Comentario> getComentarios() {
-		return comentarios;
-	}
-	public void setComentarios(List<Comentario> comentarios) {
-		this.comentarios = comentarios;
-	}
-	public List<Avaliacao> getAvaliacoes() {
-		return avaliacoes;
-	}
-	public void setAvaliacoes(List<Avaliacao> avaliacoes) {
-		this.avaliacoes = avaliacoes;
-	}
-	public Playlist getPlaylist() {
-		return playlist;
-	}
-	public void setPlaylist(Playlist playlist) {
-		this.playlist = playlist;
-	}
-	
+
 }
