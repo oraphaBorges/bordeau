@@ -22,19 +22,19 @@ public class IndexController {
 	@RequestMapping(method=RequestMethod.GET)
 	public ModelAndView mostrar(){
 		
-		ModelAndView mv = new ModelAndView("index");
+		ModelAndView modelAndView = new ModelAndView("index");
 		
 		List<Episodio> novosEpisodios = dao.novosEpisodios();
 		List<Episodio> EpisodiosEmAlta = dao.EpisodiosEmAlta();
-		mv.addObject("novosEpisodios", novosEpisodios);
-		mv.addObject("EpisodiosEmAlta", EpisodiosEmAlta);
+		modelAndView.addObject("novosEpisodios", novosEpisodios);
+		modelAndView.addObject("EpisodiosEmAlta", EpisodiosEmAlta);
 
 		List<Podcast> novosPodcasts = dao.novosPodcasts();
 		List<Podcast> PodcastsEmAlta = dao.PodcastsEmAlta();
-		mv.addObject("novosPodcasts", novosPodcasts);
-		mv.addObject("PodcastsEmAlta", PodcastsEmAlta);
+		modelAndView.addObject("novosPodcasts", novosPodcasts);
+		modelAndView.addObject("PodcastsEmAlta", PodcastsEmAlta);
 		
-		return mv;
+		return modelAndView;
 	}
 
 }

@@ -10,7 +10,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import br.com.bordeau.model.Podcast;
 
-
 @Repository
 @Transactional
 public class PodcastDAO {
@@ -19,10 +18,13 @@ public class PodcastDAO {
 	private EntityManager manager; 
 
 	public Podcast findById(Long id) {
-		return manager.createQuery("SELECT distinct(p) FROM Podcast p "
+		Podcast podcast =  manager.createQuery("SELECT distinct(p) FROM Podcast p "
 				+ "WHERE p.id = :id",Podcast.class)
 			.setParameter("id",id)
 			.getSingleResult();
+		
+		System.out.println("Podcast Encontrado:" + podcast.getNome());
+		return podcast;
 	}
 
 	public void gravar(Object object) {
@@ -44,6 +46,7 @@ public class PodcastDAO {
 	public void update(Object object) {
 		Podcast podcast = (Podcast) object;
 		manager.merge(podcast);
+		System.out.println("Podcast atualizado");
 	}
 
 	public void remove(Object object) {

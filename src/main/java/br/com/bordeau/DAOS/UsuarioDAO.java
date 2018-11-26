@@ -26,7 +26,7 @@ public class UsuarioDAO {
 		if (usuario == null) {
 			throw new UsernameNotFoundException("Usuário " + email + " não exite");
 		}
-		System.out.println("Usuario Existe:" + usuario.getEmail());
+		System.out.println("Usuario Encontrado:" + usuario.getEmail());
 		return usuario;
 	}
 
@@ -36,6 +36,7 @@ public class UsuarioDAO {
 		usuario.setSenha(hasSenha);
 		
 		manager.persist(usuario);
+		System.out.println("Usuário Criado");
 	}
 
 	public List<Usuario> lista() {
@@ -44,6 +45,7 @@ public class UsuarioDAO {
 
 	public void update(Usuario usuario) {
 		manager.merge(usuario);
+		System.out.println("Usuário Atualizado");
 	}
 
 }

@@ -26,7 +26,7 @@ public class Podcast {
 	private Boolean ativo = false;
 	
 	@OneToMany(fetch = FetchType.EAGER, cascade=CascadeType.PERSIST) @Fetch(FetchMode.SELECT)
-	private List<Episodio> episodios = new ArrayList<>();
+	private List<Episodio> episodios = new ArrayList<>(); 
 	
 	// Getters && Setters
 	
