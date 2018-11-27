@@ -37,4 +37,8 @@ public class IndexController {
 		return modelAndView;
 	}
 
+	@RequestMapping("/painel")
+	public ModelAndView painel() {
+		return new ModelAndView("redirect:/usuarios/painel");
+	}
 }

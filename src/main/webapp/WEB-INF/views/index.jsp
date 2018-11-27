@@ -62,7 +62,7 @@
 
 						<c:forEach items="${PodcastsEmAlta}" var="podcastEmAlta">
 						  <a href="${s:mvcUrl('PC#exibirPagina').arg(0,podcastEmAlta.id).build()}">
-				          <div class="col-md-4">
+				          <div class="col-md-4" >
 				              <div class="card mb-4 shadow-sm">
 				                <img class="card-img-top" src="${podcastEmAlta.capaPath}" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;"  data-holder-rendered="true">
 				                <div class="card-body">

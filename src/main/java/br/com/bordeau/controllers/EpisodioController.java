@@ -23,13 +23,17 @@ import br.com.bordeau.model.Usuario;
 @Controller
 @RequestMapping("/podcast/episodio")
 public class EpisodioController {
-	
-	@Autowired	private EpisodioDAO epsiodioDAO;
-	@Autowired  private UsuarioDAO usuarioDAO;
-	@Autowired  private PodcastDAO podcastDAO;
-	@Autowired	private FileSaver fileSaver;
-	
-	@RequestMapping(value = "/{id}" , method=RequestMethod.GET)
+
+	@Autowired
+	private EpisodioDAO epsiodioDAO;
+	@Autowired
+	private UsuarioDAO usuarioDAO;
+	@Autowired
+	private PodcastDAO podcastDAO;
+	@Autowired
+	private FileSaver fileSaver;
+
+	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public ModelAndView exibirPagina(@PathVariable("id") Long id) {
 		Episodio episodio = epsiodioDAO.findById(id);
 		ModelAndView modelAndView = new ModelAndView("podcast/paginaEpisodio");
@@ -38,8 +42,8 @@ public class EpisodioController {
 		modelAndView.addObject("episodio", episodio);
 		return modelAndView;
 	}
-	
-	@RequestMapping(value = "/novo" ,method=RequestMethod.GET)
+
+	@RequestMapping(value = "/novo", method = RequestMethod.GET)
 	public ModelAndView exibirFormulario(Podcast podcast) {
 		ModelAndView modelAndView = new ModelAndView("podcast/formularioEpisodio");
 		modelAndView.addObject("episodio", new Episodio());
@@ -47,8 +51,8 @@ public class EpisodioController {
 		return modelAndView;
 	}
 
-	@RequestMapping(value = "/novo" ,method=RequestMethod.POST)
-	public ModelAndView enviarFormulario(String htmlComplementar,MultipartFile[] files,Episodio episodio) {
+	@RequestMapping(value = "/novo", method = RequestMethod.POST)
+	public ModelAndView enviarFormulario(String htmlComplementar, MultipartFile[] files, Episodio episodio) {
 		try {
 			String path;
 			path = fileSaver.write("capas", files[0]);
@@ -56,20 +60,19 @@ public class EpisodioController {
 			path = fileSaver.write("audios", files[1]);
 			episodio.setAudio(path);
 			episodio.setHtmlComplementar(htmlComplementar);
-			
+
 			Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 			Usuario usuario = usuarioDAO.findByEmail(authentication.getName());
-			
+
 			epsiodioDAO.gravar(episodio);
 			usuario.getPodcast().getEpisodios().add(epsiodioDAO.findById(episodio.getId()));
 			podcastDAO.update(usuario.getPodcast());
-			
+
 		} catch (Exception e) {
 			System.out.println("Episódio não gravado");
-			
+
 		}
 		return new ModelAndView("redirect:/");
 	}
-
 
 }

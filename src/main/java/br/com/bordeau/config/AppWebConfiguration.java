@@ -27,8 +27,9 @@ import br.com.bordeau.infra.FileSaver;
 
 @EnableWebMvc
 @Configuration
-@ComponentScan(basePackageClasses = { IndexController.class,FileSaver.class,EpisodioDAO.class, IndexDAO.class, PodcastDAO.class, AuthenticationDAO.class ,UsuarioDAO.class})
-public class AppWebConfiguration implements WebMvcConfigurer{
+@ComponentScan(basePackageClasses = { IndexController.class, FileSaver.class, EpisodioDAO.class, IndexDAO.class,
+		PodcastDAO.class, AuthenticationDAO.class, UsuarioDAO.class })
+public class AppWebConfiguration implements WebMvcConfigurer {
 
 	@Bean
 	public InternalResourceViewResolver internalResourceViewResolver() {
@@ -38,7 +39,7 @@ public class AppWebConfiguration implements WebMvcConfigurer{
 
 		return resolver;
 	}
-	
+
 	@Bean
 	public MessageSource messageSource() {
 		ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
@@ -56,25 +57,22 @@ public class AppWebConfiguration implements WebMvcConfigurer{
 		register.registerFormatters(conversionService);
 		return conversionService;
 	}
-	
+
 	@Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry
-          .addResourceHandler("/resources/**")
-          .addResourceLocations("/resources/"); 
-    }
-	
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
+	}
+
 	// Método que ativa a coleta dos arquivos que foram adiconado
 	// como o bootstrap por exemplo.
 	@Override
-    public void configureDefaultServletHandling(
-            DefaultServletHandlerConfigurer configurer) {
-        configurer.enable();
-    }
-	
+	public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
+		configurer.enable();
+	}
+
 	@Bean
 	public MultipartResolver multipartResolver() {
 		return new StandardServletMultipartResolver();
 	}
-	
+
 }

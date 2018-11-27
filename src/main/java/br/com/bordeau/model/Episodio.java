@@ -1,5 +1,6 @@
 package br.com.bordeau.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,8 +14,10 @@ public class Episodio {
 	
 	private String titulo;
 	private String audioPath;
+	@Column(columnDefinition="TEXT")
 	private String descricao;
 	private String capa;
+	@Column(columnDefinition="TEXT")
 	private String htmlComplementar;
 		
 	

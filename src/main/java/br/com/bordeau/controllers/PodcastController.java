@@ -13,26 +13,26 @@ import br.com.bordeau.model.Podcast;
 @Controller
 @RequestMapping("/podcast")
 public class PodcastController {
-	
+
 	@Autowired
 	private PodcastDAO dao;
 	private Podcast podcast;
-	
-	@RequestMapping(value = "/{id}" , method=RequestMethod.GET)
-	public ModelAndView exibirPagina(@PathVariable("id") Long id){
-		this.podcast = dao.findById(id);		
-		
+
+	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+	public ModelAndView exibirPagina(@PathVariable("id") Long id) {
+		this.podcast = dao.findById(id);
+
 		ModelAndView modelAndView = new ModelAndView("podcast/paginaPodcast");
 		modelAndView.addObject("podcast", podcast);
-		modelAndView.addObject("episodios", podcast.getEpisodios());		
+		modelAndView.addObject("episodios", podcast.getEpisodios());
 		return modelAndView;
 	}
-	
-	@RequestMapping(value = "/novo" ,method=RequestMethod.GET)
-	public ModelAndView exibirFormulario(){
+
+	@RequestMapping(value = "/novo", method = RequestMethod.GET)
+	public ModelAndView exibirFormulario() {
 		ModelAndView modelAndView = new ModelAndView("podcast/formularioPodcast");
 		modelAndView.addObject("podcast", new Podcast());
 		return modelAndView;
 	}
-	
+
 }

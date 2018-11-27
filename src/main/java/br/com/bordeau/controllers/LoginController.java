@@ -11,7 +11,7 @@ public class LoginController {
 	public String loginForm() {
 		return "login";
 	}
-	
+
 	@RequestMapping("/403error")
 	public String accessDenied() {
 		return "accessDenied";

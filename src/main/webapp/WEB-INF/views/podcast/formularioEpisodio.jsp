@@ -9,7 +9,7 @@
 <c:url value="/resources" var="resourcePath" />
 <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 </head>
-<tag:template-index>
+<tag:template-painel>
 	<jsp:body>
 		<div class="container" style="padding: 50px;">
 		<div class="mx-auto">
@@ -85,7 +85,8 @@
 			                </span>
 			                </div>
 			                
-			                <div id="editor" class="editor height-cc" name="htmlComplementar"></div>
+			                <div id="editor" class="editor height-cc" name="htmlComplementar">
+			                </div>
 			                </div>
 			            </div>
 			        </div>						
@@ -107,4 +108,4 @@
 	  </script>
       
 	</jsp:body>
-</tag:template-index>
+</tag:template-painel>

@@ -1,8 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
 <%@ taglib prefix="tag" tagdir="/WEB-INF/tags"%>
 <head>
-<title>Formul·rio</title>
+<title>Formul√°rio</title>
 <c:url value="/resources" var="resourcePath" />
 <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 <link href="${resourcePath}/css/episodio.css" rel="stylesheet">
@@ -54,7 +56,7 @@
 			function toast(){
 				x = new URL(location.href);
 				if(x.searchParams.get("new") == "success"){
-					document.getElementById('sucesso').innerHTML = '<div class="alert alert-success" role="alert">EpisÛdio criado com sucesso!</div>';
+					document.getElementById('sucesso').innerHTML = '<div class="alert alert-success" role="alert">Epis√≥dio criado com sucesso!</div>';
 				}
 				setTimeout(function(){ document.getElementById('sucesso').innerHTML = ''}, 3000);
     		}

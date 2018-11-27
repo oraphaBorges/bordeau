@@ -33,7 +33,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 			.and()
 				.logout()
 				.logoutRequestMatcher(new AntPathRequestMatcher("/logout")).permitAll()
-				.logoutSuccessUrl("/login");
+				.logoutSuccessUrl("/");
 	}
 
 	@Override
@@ -46,7 +46,4 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 	public void configure(WebSecurity web) throws Exception {
 		web.ignoring().antMatchers("/resources/**");
 	}
-	
-	
-
 }
