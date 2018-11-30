@@ -21,6 +21,7 @@ import br.com.bordeau.DAOS.AuthenticationDAO;
 import br.com.bordeau.DAOS.EpisodioDAO;
 import br.com.bordeau.DAOS.IndexDAO;
 import br.com.bordeau.DAOS.PodcastDAO;
+import br.com.bordeau.DAOS.RoleDAO;
 import br.com.bordeau.DAOS.UsuarioDAO;
 import br.com.bordeau.controllers.IndexController;
 import br.com.bordeau.infra.FileSaver;
@@ -28,7 +29,7 @@ import br.com.bordeau.infra.FileSaver;
 @EnableWebMvc
 @Configuration
 @ComponentScan(basePackageClasses = { IndexController.class, FileSaver.class, EpisodioDAO.class, IndexDAO.class,
-		PodcastDAO.class, AuthenticationDAO.class, UsuarioDAO.class })
+		PodcastDAO.class, AuthenticationDAO.class, UsuarioDAO.class, RoleDAO.class })
 public class AppWebConfiguration implements WebMvcConfigurer {
 
 	@Bean

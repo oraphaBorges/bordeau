@@ -10,7 +10,7 @@ public class Role implements GrantedAuthority{
 	
 	private static final long serialVersionUID = 1L;
 
-	@Id
+	@Id 
 	private String nome;
 	
 	public Role(){

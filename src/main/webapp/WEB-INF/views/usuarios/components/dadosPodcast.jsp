@@ -15,7 +15,21 @@
 </div>
 <div class="card-body">
 	<table class="list-unstyled mt-3 mb-4 ">
+			
+			
 			<form:hidden path="podcast.id" />
+			<div class="row justify-content-between">
+				<div class="form-check col-4 btn btn-danger">
+				  <form:radiobutton path="podcast.ativo" value="true" name="ativo" cssClass="form-check-input"/> 
+				  <label class="form-check-label" for="ativo">Podcast Ativado</label>
+				</div>
+				<div class="form-check col-4 btn btn-danger">
+				  <form:radiobutton path="podcast.ativo" value="false" name="desativado" cssClass="form-check-input"/>
+				  <label class="form-check-label" for="desativado">Podcast Desativado</label>
+				</div>
+			</div>
+			
+			</div>
 			<div class="form-group row">
 				<label class="font-weight-bold font-red">Nome: </label>
 				<form:input value="${podcast.nome}" path="podcast.nome" cssClass="form-control" placeholder="Nome completo" required="required" />
@@ -27,7 +41,7 @@
 
 			<div class="form-group row">
 				<label class="col-form-label font-weight-bold font-red">Enviar imagem da capa do episódio:</label> 
-				<input value="" name="files" type="file" class="form-control-file btn btn-outline-danger" accept="image/*">
+				<input value="${podcast.capaPath}" name="files" type="file" class="form-control-file btn btn-outline-danger" accept="image/*">
 			</div>
 	</table>
 </div>

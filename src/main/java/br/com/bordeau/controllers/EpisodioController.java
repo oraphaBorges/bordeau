@@ -35,11 +35,14 @@ public class EpisodioController {
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public ModelAndView exibirPagina(@PathVariable("id") Long id) {
-		Episodio episodio = epsiodioDAO.findById(id);
 		ModelAndView modelAndView = new ModelAndView("podcast/paginaEpisodio");
+		
+		Episodio episodio = epsiodioDAO.findById(id);
 		List<Episodio> recomendados = epsiodioDAO.recomendacoes();
+		
 		modelAndView.addObject("recomendados", recomendados);
 		modelAndView.addObject("episodio", episodio);
+		
 		return modelAndView;
 	}
 
