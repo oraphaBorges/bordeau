@@ -13,7 +13,11 @@
 	<header class="masthead text-left">
 		<div class="inner">
 			<nav class="nav nav-masthead justify-content-end">
-				<security:authorize access="isAuthenticated()">    
+				<security:authorize access="hasRole('ROLE_CRIADOR')">  
+					<a class="text-light"	style="text-decoration:none; padding:5px;" href="/bordeau/podcast/meusEpisodios/">Meus Episódios</a> 
+					<a class="text-light"	style="text-decoration:none; padding:5px;" href="/bordeau/podcast/episodio/novo">Novo Episódio</a>
+				</security:authorize> 
+				<security:authorize access="isAuthenticated()">   
 					<a class="text-light"	style="text-decoration:none; padding:5px;" href="/bordeau/painel">Painel de Configuração</a> 
 					<a class="text-light"	style="text-decoration:none; padding:5px;" href="/bordeau/logout">Sair</a> 
 				</security:authorize>

@@ -15,7 +15,7 @@
 			</div>		
 		</div>
 		<div class="pricing-header mx-auto text-center">
-				    <h1 class="display-4">Episódios Em Alta</h1>
+				    <h4 class="display-4">Episódios Em Alta</h4>
 					<hr class="featurette-divider" style="width: 40%;">
 					<div class="album py-5 bg-light">
 				       <div class="container">
@@ -25,7 +25,7 @@
 						  <a href="${s:mvcUrl('EC#exibirPagina').arg(0,episodioEmAlta.id).build()}">
 				          <div class="col-md-4">
 				              <div class="card mb-4 shadow-sm">
-				                <img class="card-img-top" src="${episodioEmAlta.capa}" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;"  data-holder-rendered="true">
+				                <img class="card-img-top" src="/bordeau/${episodioEmAlta.capa}" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;"  data-holder-rendered="true">
 				                <div class="card-body">
 				                  <a href="" class="text-dark"><h4 class="text-dark">${episodioEmAlta.titulo}</h4></a>
 				                  <p class="card-text">${episodioEmAlta.descricao}</p>

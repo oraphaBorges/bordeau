@@ -89,10 +89,6 @@ public class UsuarioController {
 		ModelAndView modelAndView = new ModelAndView("usuarios/lista_usuarios");
 		modelAndView.addObject("usuarios", usuarios);
 
-		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-		Usuario usuario = usuarioDAO.findByEmail(authentication.getName());
-		modelAndView.addObject("usr", usuario);
-
 		return modelAndView;
 	}
 

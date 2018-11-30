@@ -19,6 +19,7 @@
 			    </div>
 			    <button type="submit" class="btn btn-dark">Logar</button>
 			    <a href="/bordeau/usuarios/cadastro" class="btn btn-danger">Cadastrar Usuários</a>
+			    <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }" />
 			</form:form>
 		</div>
 		

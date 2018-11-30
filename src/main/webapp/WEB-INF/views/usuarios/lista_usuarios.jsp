@@ -7,17 +7,16 @@
 <%@ taglib prefix="tag" tagdir="/WEB-INF/tags"%>
 <tag:template-index>
 	<jsp:body>
-	<h1>Estoque</h1>
-	<div>${resultado}</div>
-	<a href="${s:mvcUrl('UC#formOuvinte').build()}">Cadastrar Ouvinte</a>
-	<a href="${s:mvcUrl('UC#formCreator').build()}">Cadastrar Criador</a>
+<div class="container">
 	<table class="table table-bordered table-striped table-hover">
+		<h1>Usuários</h1>
+		<div>${resultado}</div>
 		<a href="https://bcrypt-generator.com/">BCrypter Calculator</a>
 		<tr>
 			<th>Nome</th>
 			<th>Email</th>
 			<th>Senha</th>
-			<th>Roles</th>
+			<th>Permissões</th>
 		</tr>
 		<c:forEach items="${usuarios}" var="usuario"> 
 		<tr>
@@ -31,7 +30,7 @@
 			</td>
 		</tr>
 		</c:forEach>
-
-	</table>
+</table>
+</div>
 </jsp:body>
 </tag:template-index>

@@ -92,6 +92,7 @@
 			        </div>						
 					</div>
 					<button type="submit" class="btn btn-danger" style="width: 100%"><span class="oi oi-check"></span> Salvar</button>
+					<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }" />
 			</form:form>
 			</table>
           </div>
