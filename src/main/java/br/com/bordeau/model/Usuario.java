@@ -8,7 +8,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 
 import org.springframework.security.core.GrantedAuthority;
@@ -26,8 +26,8 @@ public class Usuario implements UserDetails {
 	@OneToOne
 	private Podcast podcast = new Podcast();
 	
-	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
-	private List<Role> roles = new ArrayList<>();
+	@ManyToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
+	private List<Role> roles = new ArrayList<Role>();
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {

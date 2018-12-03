@@ -37,7 +37,6 @@ public class UsuarioController {
 				usuario.getPodcast().setCapaPath(path);
 				usuario.getPodcast().setAtivo(true);
 			}
-			usuario.setRoles(Arrays.asList(new Role("ROLE_CRIADOR"), new Role("ROLE_OUVINTE")));
 			podcastDAO.gravar(usuario.getPodcast());
 			usuarioDAO.gravar(usuario);
 		} catch (Exception e) {
