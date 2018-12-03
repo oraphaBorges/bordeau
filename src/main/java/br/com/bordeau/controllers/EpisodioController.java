@@ -38,9 +38,11 @@ public class EpisodioController {
 		ModelAndView modelAndView = new ModelAndView("podcast/paginaEpisodio");
 		
 		Episodio episodio = epsiodioDAO.findById(id);
-		List<Episodio> recomendados = epsiodioDAO.recomendacoes();
+		List<Episodio> EpsR = epsiodioDAO.recomendacoes();
+		List<Podcast> PodsR = podcastDAO.recomendacoes();
 		
-		modelAndView.addObject("recomendados", recomendados);
+		modelAndView.addObject("EpisodiosRecomendado", EpsR);
+		modelAndView.addObject("PodcastsRecomendados", PodsR);
 		modelAndView.addObject("episodio", episodio);
 		
 		return modelAndView;

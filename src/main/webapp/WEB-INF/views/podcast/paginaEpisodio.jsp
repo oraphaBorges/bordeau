@@ -15,31 +15,30 @@
 		  <div class="form-signin text-center" style="margin-top: 30px;">
 			<a id="nome-criador" class="font-weight-bold" href="https://twitter.com/_pequenospoemas"><h1 class="display-3">${Podcast.nome}</h1></a>
 			<h4 id="titulo">${episodio.titulo}</h4>
-			<p id="data-postagem">01 de outubro de 2018</p>
 			<hr class="featurette-divider" style="width: 40%;">
 		  </div>
 		 		 		
 		<div class="container">
-		<div class="row">
 		  <div class="row mx-auto">
 		  
-				<p class="col-12" id="descricao">${episodio.descricao} </p>
+				<p class="col-12 font-italic small text-center" id="descricao"><span class="oi oi-double-quote-serif-left"></span> ${episodio.descricao} <span class="oi oi-double-quote-serif-right"></span></p> 
 
-				<div class="col-12">
+				<div class="col-12" style="margin:35px; ">
                     <div id="waveform"></div>
-                    <div style="text-align: center;">
+                    <div style="text-align: center; width: 80%">
                       <button class="btn btn-danger" onclick="wavesurfer.play()"><span class="oi oi-media-play"></span> Play</button>
                       <button class="btn btn-danger" onclick="wavesurfer.pause()"><span class="oi oi-media-pause"></span> Pause</button>
                     </div>
 				</div>
 			  
 			  <div class="col-12">
+				<hr class="featurette-divider" style="width: 100%;">
+				<p id="data-postagem">01 de outubro de 2018</p>
 				<label name="c" id="c" >${episodio.htmlComplementar} </label>
 				<div id="editor" class="editor height-cc" value="${episodio.htmlComplementar}"></div>
 			  </div>
 		
 		  </div>
-	    </div>
 	    </div>
 	    
 	    </div>

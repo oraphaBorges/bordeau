@@ -26,9 +26,6 @@
 		<section class="col-sm-12 col-md-12 col-lg-12">
 			<jsp:doBody />
 		</section>
-		<section class="col-sm-12 col-md-12 col-lg-12">
-			<%@include file="components/recomendationsPodcast.jsp"%>
-		</section>
 	</div>
 </div>
 <%@include file="components/footer.jsp"%>

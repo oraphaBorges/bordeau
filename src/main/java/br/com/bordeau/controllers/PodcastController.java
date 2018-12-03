@@ -52,5 +52,11 @@ public class PodcastController {
 		modelAndView.addObject("episodios", usuario.getPodcast().getEpisodios());
 		return modelAndView;
 	}
+	@RequestMapping("/meuPodcast")
+	public ModelAndView meuPodcast() {
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		Usuario usuario = usuarioDAO.findByEmail(authentication.getName());
+		return exibirPagina(usuario.getPodcast().getId());		
+	}
 
 }

@@ -2,15 +2,16 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
 
 <section style="margin: 20px;">
-	<c:forEach items="${recomendados}" var="episodioRecomendado">
-		<a href="${s:mvcUrl('EC#exibirPagina').arg(0,episodioRecomendado.id).build()}">
+	<p>Recomendações de Podcasts:</p>
+	<c:forEach items="${PodcastsRecomendados}" var="podcastRecomendado">
+		<a href="${s:mvcUrl('PC#exibirPagina').arg(0,podcastRecomendado.id).build()}">
 			<div class="card" style="min-width: 150px; min-height: 160px; margin-top: 10px;">
 				<div class="card-body bg-light">
 					<div class="row">
-						<img class="card-img-top col-5" src="/bordeau/${episodioRecomendado.capa}" alt="Card image cap" style="height: 100px;width: 170px;" data-holder-rendered="true" >
+						<img class="card-img-top col-5" src="/bordeau/${podcastRecomendado.capaPath}" alt="Card image cap" style="height: 100px;width: 170px;" data-holder-rendered="true" >
 						<div class="col-7 small">
-							<h5 class="card-title">${episodioRecomendado.titulo}</h5>
-							<p class="card-text">${episodioRecomendado.descricao}.</p>
+							<p class="card-title small">${podcastRecomendado.nome}</p>
+							<p class="card-text small">${podcastRecomendado.descricao}.</p>
 						</div>
 					</div>
 				</div>

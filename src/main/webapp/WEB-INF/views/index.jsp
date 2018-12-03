@@ -6,7 +6,7 @@
 <tag:template-index>
 	<jsp:body>
 		<div >
-			<div class="form-signin" style="padding:50px;">
+			<div class="form-signin" style="padding:100px;">
 				  <form class="form-signin text-center">
 					<h1 class="display-3">BORDEAU</h1>
 				    <p class="lead">Uma Plataforma Muitos mais Conteúdo</p>
@@ -22,7 +22,7 @@
 			      <p class="lead">Acompanhe o melhor dos podcasts em todo mundo!</p>
 			    </div>
 
-			<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+			<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center" style="margin-top:150px;">
 				    <h1 class="display-4">Podcasts Mais recentes</h1>
 					<hr class="featurette-divider" style="width: 40%;">
 					<div class="album py-5 bg-light">
@@ -34,7 +34,7 @@
 				              <div class="card mb-4 shadow-sm">
 				                <img class="card-img-top" src="${novoPodcast.capaPath}" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" data-holder-rendered="true">
 				                <div class="card-body">
-				                  <a href="" class="text-dark"><h4 class="text-dark">${novoPodcast.nome}</h4></a>
+				                  <a href="${s:mvcUrl('PC#exibirPagina').arg(0,novoPodcast.id).build()}" class="text-dark"><h4 class="text-dark">${novoPodcast.nome}</h4></a>
 				                  <p class="card-text">${novoEpisodio.descricao}</p>
 				                  <div class="d-flex justify-content-between align-items-center">
 				                    <div class="btn-group">
@@ -66,7 +66,7 @@
 				              <div class="card mb-4 shadow-sm">
 				                <img class="card-img-top" src="${podcastEmAlta.capaPath}" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;"  data-holder-rendered="true">
 				                <div class="card-body">
-				                  <a href="" class="text-dark"><h4 class="text-dark">${podcastEmAlta.nome}</h4></a>
+				                  <a href="${s:mvcUrl('PC#exibirPagina').arg(0,podcastEmAlta.id).build()}" class="text-dark"><h4 class="text-dark">${podcastEmAlta.nome}</h4></a>
 				                  <p class="card-text">${podcastEmAlta.descricao}</p>
 				                  <div class="d-flex justify-content-between align-items-center">
 				                    <div class="btn-group">
@@ -101,7 +101,7 @@
 				              <div class="card mb-4 shadow-sm">
 				                <img class="card-img-top" src="${novoEpisodio.capa}" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" data-holder-rendered="true">
 				                <div class="card-body">
-				                  <a href="" class="text-dark"><h4 class="text-dark">${novoEpisodio.titulo}</h4></a>
+				                  <a href="${s:mvcUrl('EC#exibirPagina').arg(0,novoEpisodio.id).build()}" class="text-dark"><h4 class="text-dark">${novoEpisodio.titulo}</h4></a>
 				                  <p class="card-text">${novoEpisodio.descricao}</p>
 				                  <div class="d-flex justify-content-between align-items-center">
 				                    <div class="btn-group">
@@ -133,7 +133,7 @@
 				              <div class="card mb-4 shadow-sm">
 				                <img class="card-img-top" src="${episodioEmAlta.capa}" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;"  data-holder-rendered="true">
 				                <div class="card-body">
-				                  <a href="" class="text-dark"><h4 class="text-dark">${episodioEmAlta.titulo}</h4></a>
+				                  <a href="${s:mvcUrl('EC#exibirPagina').arg(0,episodioEmAlta.id).build()}" class="text-dark"><h4 class="text-dark">${episodioEmAlta.titulo}</h4></a>
 				                  <p class="card-text">${episodioEmAlta.descricao}</p>
 				                  <div class="d-flex justify-content-between align-items-center">
 				                    <div class="btn-group">

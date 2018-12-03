@@ -54,6 +54,10 @@ public class PodcastDAO {
 		manager.remove(podcast);	
 	}
 
+	public List<Podcast> recomendacoes() {
+		return manager.createQuery("SELECT p FROM Podcast p ORDER BY RAND()",Podcast.class).setMaxResults(5).getResultList();
+	}
+
 
 
 
