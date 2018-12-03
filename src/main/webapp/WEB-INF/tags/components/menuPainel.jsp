@@ -14,11 +14,11 @@
 		<security:authorize access="hasRole('ROLE_CRIADOR')">
 		<a class="text-light col-12"	style="text-decoration:none; padding:5px;" href="/bordeau/podcast/episodio/novo">Novo Episódio</a>
 		<a class="text-light col-12"	style="text-decoration:none; padding:5px;" href="/bordeau/podcast/meusEpisodios/">Meus Episódios</a> 
+			<hr class="featurette-divider" style="width: 70%;">
 		</security:authorize> 
 		
-			<hr class="featurette-divider" style="width: 70%;">
 		
-		<a class="text-light col-12"	style="text-decoration:none; padding:5px;" href="">Excluir conta</a> 
+		<a class="text-light col-12"	style="text-decoration:none; padding:5px;" href="/bordeau/usuarios/deleteAccount">Excluir conta</a> 
 		</div>	
 	</div>
 </div>

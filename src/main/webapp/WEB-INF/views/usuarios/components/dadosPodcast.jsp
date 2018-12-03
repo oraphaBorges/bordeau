@@ -16,7 +16,6 @@
 <div class="card-body">
 	<table class="list-unstyled mt-3 mb-4 ">
 			
-			
 			<form:hidden path="podcast.id" />
 			<div class="row justify-content-between">
 				<div class="form-check col-4 btn btn-danger">
@@ -40,7 +39,7 @@
 			</div>
 
 			<div class="form-group row">
-				<label class="col-form-label font-weight-bold font-red">Enviar imagem da capa do episódio:</label> 
+				<label class="col-form-label font-weight-bold font-red">Enviar imagem da capa do Podcast:</label> 
 				<input value="${podcast.capaPath}" name="files" type="file" class="form-control-file btn btn-outline-danger" accept="image/*">
 			</div>
 	</table>

@@ -22,14 +22,14 @@ public class UsuarioDAO {
 	private EntityManager manager;
 
 	public Usuario findByEmail(String email) {
-		Usuario usuario = manager.find(Usuario.class,email);
+		Usuario usuario = manager.find(Usuario.class, email);
 		if (usuario == null) {
 			throw new UsernameNotFoundException("Usuário " + email + " não exite");
 		}
 		System.out.println("Usuario Encontrado:" + usuario.getEmail());
 		return usuario;
 	}
-	
+
 	public List<Usuario> lista() {
 		return manager.createQuery("SELECT u FROM Usuario u", Usuario.class).getResultList();
 	}
@@ -41,10 +41,11 @@ public class UsuarioDAO {
 		System.out.println("Usuário Criado");
 	}
 
-
 	public void update(Usuario usuario) {
 		passwordEncoder(usuario);
 		setPermissoes(usuario);
+		System.out.println(usuario.getPodcast().getAtivo());
+		usuario.getAuthorities().forEach(autho -> manager.merge(autho));
 		manager.merge(usuario);
 		System.out.println("Usuário Atualizado");
 	}
@@ -54,18 +55,29 @@ public class UsuarioDAO {
 		String hasSenha = passwordEncoder.encode(usuario.getSenha());
 		usuario.setSenha(hasSenha);
 	}
-	
+
 	private void setPermissoes(Usuario usuario) {
 		Role role_ouvinte, role_criador;
 		role_ouvinte = manager.find(Role.class, "ROLE_OUVINTE");
-		if(role_ouvinte == null) role_ouvinte = new Role("ROLE_OUVINTE");
-		
-		if(usuario.getPodcast().getAtivo()) {
+		if (role_ouvinte == null)
+			role_ouvinte = new Role("ROLE_OUVINTE");
+
+		if (usuario.getPodcast().getAtivo()) {
+			System.out.println("vai ser criador");
 			role_criador = manager.find(Role.class, "ROLE_CRIADOR");
-			if(role_criador == null) role_criador = new Role("ROLE_CRIADOR");
-			usuario.setRoles(Arrays.asList(role_ouvinte,role_criador));
-		}else {
+			if (role_criador == null)
+				role_criador = new Role("ROLE_CRIADOR");
+			usuario.setRoles(Arrays.asList(role_ouvinte, role_criador));
+		} else {
 			usuario.setRoles(Arrays.asList(role_ouvinte));
 		}
+		usuario.getRoles().forEach(e -> System.out.println(e.getNome()));
+
+	}
+
+	public void removeConta(Usuario usuario) {
+		usuario.getPodcast().getEpisodios().forEach(eps -> manager.remove(eps));
+		manager.remove(usuario.getPodcast());
+		manager.remove(usuario);
 	}
 }
