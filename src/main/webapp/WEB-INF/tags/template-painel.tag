@@ -17,19 +17,12 @@
 <html>
 <body class="bg-light" style="min-height:75%;">
 <%@include file="components/header.jsp"%>
-<div>
-	<div>
-		<div id="sucesso" class="col-12"></div>
-		<div class="col-sm-12 parallax" id="episodio-capa" style="weight:100%;height: 200px; background-image: url('/bordeau/${episodio.capa}');"></div>
+<div class="media">
+	<div class="align-self-start">
+		<%@include file="components/menuPainel.jsp"%>
 	</div>
-	<div class="row mx-auto">
-		<section class="col-sm-12 col-md-8 col-lg-8">
-			<jsp:doBody />
-		</section>
-		<section class="col-sm-12 col-md-4 col-lg-4">
-			<%@include file="components/recomendationsEpisodios.jsp"%>
-			<%@include file="components/recomendationsPodcast.jsp"%>
-		</section>
+	<div class="align-self-start">
+		<jsp:doBody />
 	</div>
 </div>
 <%@include file="components/footer.jsp"%>

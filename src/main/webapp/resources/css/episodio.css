@@ -6,6 +6,9 @@
 .font-red{
 	color:#800000;
 }
+.bg-red{
+	background-color:rgb(128, 0, 0,0.7);
+}
 
 .height-cc{
 	height:450px;

@@ -8,8 +8,11 @@
 <tag:template-index>
 	<jsp:body>
 		<div class="form-signin d-block mx-auto jumbotron text-center" style="width: 400; margin-top:30px;">
-			<figure class="figure"><img src="<c:url value="/resources/images/logo-dark.png" />" alt="logo" width="10px;"></figure>
-	        <h5>Login</h5>
+			<div class="form-signin text-center">
+				<h1 class="display-5">Login</h1>
+				<p class="lead">Bordeau, uma só plataforma, muito mais conteúdo!</p>
+				<hr class="featurette-divider" style="width: 40%;">
+			</div>
 	        <form:form servletRelativeAction="/login" method="POST">
 			    <div class="form-group">
 			        <input name="username" type="text" class="form-control" placeholder="Usuário"/>
@@ -19,6 +22,7 @@
 			    </div>
 			    <button type="submit" class="btn btn-dark">Logar</button>
 			    <a href="/bordeau/usuarios/cadastro" class="btn btn-danger">Cadastrar Usuários</a>
+			    <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }" />
 			</form:form>
 		</div>
 		

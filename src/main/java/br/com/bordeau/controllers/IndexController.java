@@ -16,8 +16,7 @@ import br.com.bordeau.model.Podcast;
 @RequestMapping("/")
 public class IndexController {
 	
-	@Autowired
-	private IndexDAO dao;
+	@Autowired	private IndexDAO dao;
 	
 	@RequestMapping(method=RequestMethod.GET)
 	public ModelAndView mostrar(){
@@ -37,4 +36,8 @@ public class IndexController {
 		return modelAndView;
 	}
 
+	@RequestMapping("/painel")
+	public ModelAndView painel() {
+		return new ModelAndView("redirect:/usuarios/painel");
+	}
 }

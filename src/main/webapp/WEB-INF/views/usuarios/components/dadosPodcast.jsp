@@ -15,24 +15,33 @@
 </div>
 <div class="card-body">
 	<table class="list-unstyled mt-3 mb-4 ">
-		<div class="form-row">
+			
 			<form:hidden path="podcast.id" />
-			<div class="form-group col-sm-12 col-md-12">
-				<label class="font-weight-bold font-red">Nome: </label>
-				<form:input path="podcast.nome" cssClass="form-control"
-					required="required" />
+			<div class="row justify-content-between">
+				<div class="form-check col-4 btn btn-danger">
+				  <form:radiobutton path="podcast.ativo" value="true" name="ativo" cssClass="form-check-input"/> 
+				  <label class="form-check-label" for="ativo">Podcast Ativado</label>
+				</div>
+				<div class="form-check col-4 btn btn-danger">
+				  <form:radiobutton path="podcast.ativo" value="false" name="desativado" cssClass="form-check-input"/>
+				  <label class="form-check-label" for="desativado">Podcast Desativado</label>
+				</div>
 			</div>
-			<div class="form-group col-sm-12 col-md-12">
+			
+			</div>
+			
+			<div class="form-group row">
+				<label class="font-weight-bold font-red">Nome: </label>
+				<form:input value="${podcast.nome}" path="podcast.nome" cssClass="form-control" placeholder="Nome completo" required="required" />
+			</div>
+			<div class="form-group row">
 				<label class="font-weight-bold font-red">Descrição: </label>
-				<form:textarea path="podcast.descricao" cssClass="form-control"
-					required="required" />
+				<form:textarea value="${podcast.descricao}" rows="4" path="podcast.descricao" cssClass="form-control" placeholder="Descrição" required="required" />
 			</div>
 
-			<div class="form-group col-sm-12 col-md-6">
-				<label class="col-form-label font-weight-bold font-red">Enviar
-					imagem da capa do episódio:</label> <input name="files" type="file"
-					class="form-control-file btn btn-outline-danger" accept="image/*">
+			<div class="form-group row">
+				<label class="col-form-label font-weight-bold font-red">Enviar imagem da capa do Podcast:</label> 
+				<input value="${podcast.capaPath}" name="files" type="file" class="form-control-file btn btn-outline-danger" accept="image/*" required="required" >
 			</div>
-		</div>
 	</table>
 </div>

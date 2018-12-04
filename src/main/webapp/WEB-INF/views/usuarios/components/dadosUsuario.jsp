@@ -11,15 +11,15 @@
 		<p class="lead">Preencha todos os dados pessoais</p>
 		<hr class="featurette-divider" style="width: 40%;">
 	</div>
-	<div class="form-group">
-		<form:input path="nome" cssClass="form-control" required="required"
-			placeholder="Nome completo" />
+	<div class="form-group row ">
+		<label class="font-weight-bold font-red">Nome Completo: </label>
+		<form:input value="${usuario.nome}" path="nome" cssClass="form-control" required="required" placeholder="Nome completo" />
 	</div>
-	<div class="form-group">
-		<form:input path="email" cssClass="form-control" required="required"
-			placeholder="E-mail" />
+	<div class="form-group row">
+		<label class="font-weight-bold font-red">E-mail: </label>
+		<form:input value="${usuario.email}" path="email" cssClass="form-control" required="required" placeholder="E-mail" />
 	</div>
-	<div class="form-group">
-		<form:password path="senha" cssClass="form-control"
-			placeholder="Senha" />
+	<div class="form-group row">
+		<label class="font-weight-bold font-red">Senha: </label>
+		<form:password path="senha" cssClass="form-control" placeholder="Senha" required="required" />
 	</div>

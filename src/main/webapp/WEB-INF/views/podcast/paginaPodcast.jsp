@@ -10,6 +10,7 @@
 			<a id="nome-criador" class="font-weight-bold" ><h1 class="display-3">${podcast.nome}</h1></a>
 			<h4 id="titulo"></h4>
 			<hr class="featurette-divider" style="width: 40%;">
+			<p class=""> ${podcast.descricao} </p>
 		  </div>
 		  			<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
 				    <h1 class="display-4">Episodios</h1>
