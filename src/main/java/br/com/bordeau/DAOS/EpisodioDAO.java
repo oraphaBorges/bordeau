@@ -18,10 +18,7 @@ public class EpisodioDAO{
 	private EntityManager manager; 
 
 	public Episodio findById(Long id) {
-		return manager.createQuery("SELECT distinct(p) FROM Episodio p "
-				+ "WHERE p.id = :id",Episodio.class)
-			.setParameter("id",id)
-			.getSingleResult();
+		return manager.find(Episodio.class, id);
 	}
 
 	public void gravar(Object object) {

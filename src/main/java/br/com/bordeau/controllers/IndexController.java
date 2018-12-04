@@ -16,8 +16,7 @@ import br.com.bordeau.model.Podcast;
 @RequestMapping("/")
 public class IndexController {
 	
-	@Autowired
-	private IndexDAO dao;
+	@Autowired	private IndexDAO dao;
 	
 	@RequestMapping(method=RequestMethod.GET)
 	public ModelAndView mostrar(){

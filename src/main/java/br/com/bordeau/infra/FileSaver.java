@@ -10,8 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Component
 public class FileSaver {
-	@Autowired
-	private HttpServletRequest request;
+	@Autowired	private HttpServletRequest request;
 
 	public String write(String baseFolder, MultipartFile file) {
 

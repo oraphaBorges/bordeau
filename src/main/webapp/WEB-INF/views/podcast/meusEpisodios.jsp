@@ -24,7 +24,7 @@
 			              <div class="card mb-4 shadow-sm">
 				              <img class="card-img-top" src="/bordeau/${episodioEmAlta.capa}" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;"  data-holder-rendered="true">
 				              <div class="card-body">
-				 	             <a href="" class="text-dark"><h4 class="text-dark">${episodioEmAlta.titulo}</h4></a>
+				 	             <a href="${s:mvcUrl('EC#exibirPagina').arg(0,episodioEmAlta.id).build()}" class="text-dark"><h4 class="text-dark">${episodioEmAlta.titulo}</h4></a>
 				                 <p class="card-text">${episodioEmAlta.descricao}</p>
 				                 <div class="d-flex justify-content-between align-items-center">
 				                   <div class="btn-group">

@@ -18,10 +18,8 @@ import br.com.bordeau.model.Usuario;
 @RequestMapping("/podcast")
 public class PodcastController {
 
-	@Autowired
-	private PodcastDAO podcastDAO;
-	@Autowired
-	private UsuarioDAO usuarioDAO;
+	@Autowired	private PodcastDAO podcastDAO;
+	@Autowired	private UsuarioDAO usuarioDAO;
 	private Podcast podcast;
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
@@ -40,23 +38,24 @@ public class PodcastController {
 		modelAndView.addObject("podcast", new Podcast());
 		return modelAndView;
 	}
-	
+
 	@RequestMapping("/meusEpisodios")
 	public ModelAndView meusEpisodios() {
 		ModelAndView modelAndView = new ModelAndView("podcast/meusEpisodios");
-		
+
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		Usuario usuario = usuarioDAO.findByEmail(authentication.getName());
-		
+
 		modelAndView.addObject("podcast", usuario.getPodcast());
 		modelAndView.addObject("episodios", usuario.getPodcast().getEpisodios());
 		return modelAndView;
 	}
+
 	@RequestMapping("/meuPodcast")
 	public ModelAndView meuPodcast() {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		Usuario usuario = usuarioDAO.findByEmail(authentication.getName());
-		return exibirPagina(usuario.getPodcast().getId());		
+		return exibirPagina(usuario.getPodcast().getId());
 	}
 
 }

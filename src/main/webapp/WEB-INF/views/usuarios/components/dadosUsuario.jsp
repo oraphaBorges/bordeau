@@ -21,5 +21,5 @@
 	</div>
 	<div class="form-group row">
 		<label class="font-weight-bold font-red">Senha: </label>
-		<form:password path="senha" cssClass="form-control" placeholder="Senha" />
+		<form:password path="senha" cssClass="form-control" placeholder="Senha" required="required" />
 	</div>

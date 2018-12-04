@@ -23,10 +23,7 @@
 					
 					<button type="submit" class="btn btn-danger" style="width: 100%"><span class="oi oi-check"></span> Salvar</button>
 					
-					<security:authorize access="isAuthenticated()">    
-						<a href="/bordeau/usuarios" class="btn btn-dark" style="width: 100%">Lista de Usuários</a>
-					</security:authorize>
-				</div>
+					</div>
 			</div>
 		</form:form>
 	</div>

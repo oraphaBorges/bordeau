@@ -20,18 +20,15 @@ import br.com.bordeau.model.Usuario;
 @RequestMapping("/usuarios")
 public class UsuarioController {
 
-	@Autowired
-	private UsuarioDAO usuarioDAO;
-	@Autowired
-	private PodcastDAO podcastDAO;
-	@Autowired
-	private FileSaver fileSaver;
+	@Autowired	private UsuarioDAO usuarioDAO;
+	@Autowired	private PodcastDAO podcastDAO;
+	@Autowired	private FileSaver fileSaver;
 
 	@RequestMapping(method = RequestMethod.POST)
 	public ModelAndView gravar(Usuario usuario, MultipartFile[] files) {
 		try {
 			podcastAtivo(usuario, files);
-			
+
 			podcastDAO.gravar(usuario.getPodcast());
 			usuarioDAO.gravar(usuario);
 		} catch (Exception e) {
@@ -102,15 +99,15 @@ public class UsuarioController {
 
 		return modelAndView;
 	}
-	
+
 	@RequestMapping(value = "/deleteingAccount")
 	public ModelAndView excluirConta() {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		Usuario usuario = usuarioDAO.findByEmail(authentication.getName());
-		usuarioDAO.removeConta(usuario);		
+		usuarioDAO.removeConta(usuario);
 		return new ModelAndView("redirect:/logout");
 	}
-	
+
 	@RequestMapping(value = "/deleteAccount", method = RequestMethod.GET)
 	public ModelAndView deleteAccoount() {
 		return new ModelAndView("deleteAccount");

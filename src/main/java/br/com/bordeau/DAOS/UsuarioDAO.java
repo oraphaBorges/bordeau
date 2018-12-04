@@ -26,7 +26,6 @@ public class UsuarioDAO {
 		if (usuario == null) {
 			throw new UsernameNotFoundException("Usuário " + email + " não exite");
 		}
-		System.out.println("Usuario Encontrado:" + usuario.getEmail());
 		return usuario;
 	}
 
@@ -38,16 +37,13 @@ public class UsuarioDAO {
 		passwordEncoder(usuario);
 		setPermissoes(usuario);
 		manager.persist(usuario);
-		System.out.println("Usuário Criado");
 	}
 
 	public void update(Usuario usuario) {
 		passwordEncoder(usuario);
 		setPermissoes(usuario);
-		System.out.println(usuario.getPodcast().getAtivo());
 		usuario.getAuthorities().forEach(autho -> manager.merge(autho));
 		manager.merge(usuario);
-		System.out.println("Usuário Atualizado");
 	}
 
 	private void passwordEncoder(Usuario usuario) {
@@ -63,7 +59,6 @@ public class UsuarioDAO {
 			role_ouvinte = new Role("ROLE_OUVINTE");
 
 		if (usuario.getPodcast().getAtivo()) {
-			System.out.println("vai ser criador");
 			role_criador = manager.find(Role.class, "ROLE_CRIADOR");
 			if (role_criador == null)
 				role_criador = new Role("ROLE_CRIADOR");

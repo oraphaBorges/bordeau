@@ -64,8 +64,6 @@ public class AppWebConfiguration implements WebMvcConfigurer {
 		registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
 	}
 
-	// Método que ativa a coleta dos arquivos que foram adiconado
-	// como o bootstrap por exemplo.
 	@Override
 	public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
 		configurer.enable();

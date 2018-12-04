@@ -24,27 +24,23 @@ import br.com.bordeau.model.Usuario;
 @RequestMapping("/podcast/episodio")
 public class EpisodioController {
 
-	@Autowired
-	private EpisodioDAO epsiodioDAO;
-	@Autowired
-	private UsuarioDAO usuarioDAO;
-	@Autowired
-	private PodcastDAO podcastDAO;
-	@Autowired
-	private FileSaver fileSaver;
+	@Autowired	private EpisodioDAO epsiodioDAO;
+	@Autowired	private UsuarioDAO usuarioDAO;
+	@Autowired	private PodcastDAO podcastDAO;
+	@Autowired	private FileSaver fileSaver;
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public ModelAndView exibirPagina(@PathVariable("id") Long id) {
 		ModelAndView modelAndView = new ModelAndView("podcast/paginaEpisodio");
-		
+
 		Episodio episodio = epsiodioDAO.findById(id);
 		List<Episodio> EpsR = epsiodioDAO.recomendacoes();
 		List<Podcast> PodsR = podcastDAO.recomendacoes();
-		
+
 		modelAndView.addObject("EpisodiosRecomendado", EpsR);
 		modelAndView.addObject("PodcastsRecomendados", PodsR);
 		modelAndView.addObject("episodio", episodio);
-		
+
 		return modelAndView;
 	}
 
@@ -57,14 +53,13 @@ public class EpisodioController {
 	}
 
 	@RequestMapping(value = "/novo", method = RequestMethod.POST)
-	public ModelAndView enviarFormulario(String htmlComplementar, MultipartFile[] files, Episodio episodio) {
+	public ModelAndView enviarFormulario(MultipartFile[] files, Episodio episodio) {
 		try {
 			String path;
 			path = fileSaver.write("capas", files[0]);
 			episodio.setCapa(path);
 			path = fileSaver.write("audios", files[1]);
 			episodio.setAudio(path);
-			episodio.setHtmlComplementar(htmlComplementar);
 
 			Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 			Usuario usuario = usuarioDAO.findByEmail(authentication.getName());

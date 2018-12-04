@@ -4,8 +4,8 @@
 <section style="margin: 20px;">
 	<p>Recomendações de Podcasts:</p>
 	<c:forEach items="${PodcastsRecomendados}" var="podcastRecomendado">
-		<a href="${s:mvcUrl('PC#exibirPagina').arg(0,podcastRecomendado.id).build()}">
-			<div class="card" style="min-width: 150px; min-height: 160px; margin-top: 10px;">
+		<a class="bg-white text-dark" href="${s:mvcUrl('PC#exibirPagina').arg(0,podcastRecomendado.id).build()}"  >
+			<div class="card " style="min-width: 150px; min-height: 160px; margin-top: 10px;">
 				<div class="card-body bg-light">
 					<div class="row">
 						<img class="card-img-top col-5" src="/bordeau/${podcastRecomendado.capaPath}" alt="Card image cap" style="height: 100px;width: 170px;" data-holder-rendered="true" >

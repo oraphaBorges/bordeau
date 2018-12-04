@@ -33,9 +33,8 @@
 			  
 			  <div class="col-12">
 				<hr class="featurette-divider" style="width: 100%;">
-				<p id="data-postagem">01 de outubro de 2018</p>
-				<label name="c" id="c" >${episodio.htmlComplementar} </label>
-				<div id="editor" class="editor height-cc" value="${episodio.htmlComplementar}"></div>
+				<input type="text" name="c" id="c" value="${episodio.htmlComplementar}" hidden>
+				<div id="editor" class="editor"></div>
 			  </div>
 		
 		  </div>

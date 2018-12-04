@@ -29,6 +29,7 @@
 			</div>
 			
 			</div>
+			
 			<div class="form-group row">
 				<label class="font-weight-bold font-red">Nome: </label>
 				<form:input value="${podcast.nome}" path="podcast.nome" cssClass="form-control" placeholder="Nome completo" required="required" />
@@ -40,7 +41,7 @@
 
 			<div class="form-group row">
 				<label class="col-form-label font-weight-bold font-red">Enviar imagem da capa do Podcast:</label> 
-				<input value="${podcast.capaPath}" name="files" type="file" class="form-control-file btn btn-outline-danger" accept="image/*">
+				<input value="${podcast.capaPath}" name="files" type="file" class="form-control-file btn btn-outline-danger" accept="image/*" required="required" >
 			</div>
 	</table>
 </div>

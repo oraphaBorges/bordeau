@@ -18,13 +18,7 @@ public class PodcastDAO {
 	private EntityManager manager; 
 
 	public Podcast findById(Long id) {
-		Podcast podcast =  manager.createQuery("SELECT distinct(p) FROM Podcast p "
-				+ "WHERE p.id = :id",Podcast.class)
-			.setParameter("id",id)
-			.getSingleResult();
-		
-		System.out.println("Podcast Encontrado:" + podcast.getNome());
-		return podcast;
+		return manager.find(Podcast.class, id);
 	}
 
 	public void gravar(Object object) {
@@ -46,7 +40,6 @@ public class PodcastDAO {
 	public void update(Object object) {
 		Podcast podcast = (Podcast) object;
 		manager.merge(podcast);
-		System.out.println("Podcast atualizado");
 	}
 
 	public void remove(Object object) {
